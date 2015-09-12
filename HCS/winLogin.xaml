@@ -1,0 +1,78 @@
+﻿<Window x:Class="HCS.winLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ns="clr-namespace:HCS"
+        WindowStartupLocation="CenterScreen"
+       ResizeMode="CanMinimize"
+        Title="Login" Height="450" Width="400" Loaded="winLogin_Loaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resource.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+      </Window.Resources>
+
+    <Grid Name="modelGrid" Style="{StaticResource myStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="tbCaption" Text="الحمد کمیشن شاپ" FontSize="50" FontFamily="/fonts/#Jameel Noori Nastaleeq" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+        <Label Name="lblLogin" Content="لاگ ان" FontSize="30" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" FontWeight="Bold" />
+        <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource myStyle}">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Name="lblDate" Content="تاریخ :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="0" Grid.Column="0" FontWeight="Bold" HorizontalAlignment="Right" />
+            <TextBlock Name="tbDate" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
+            <Label Name="lblTime" Content="وقت :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="1" Grid.Column="0" FontWeight="Bold" HorizontalAlignment="Right"/>
+            <TextBlock Name="tbTime" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/> 
+
+        </Grid>
+        <Grid Name="grdLogin" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5" Style="{StaticResource myStyle}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="180"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="btnUserImage" Grid.Row="0" Grid.Column="0"   Background="Transparent" BorderThickness="1,1,0,1" IsEnabled="False" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="\Images\Login\user.png" Stretch="Uniform"/>
+                </StackPanel>
+            </Button>
+            <TextBox Name="tbUserName" Grid.Row="0" Grid.Column="1" Text="{Binding Path=user_id}"  Style="{StaticResource WaterMarkTextBox}"   />
+            <Button Name="btnUserPassword"  Grid.Row="1" Grid.Column="0"   Background="Transparent" BorderThickness="1,1,0,1" IsEnabled="False">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="\Images\Login\lock.png" Stretch="Uniform"/>
+                </StackPanel>
+            </Button>
+            <PasswordBox Name="pbPassword" Grid.Row="1" Grid.Column="1" />
+
+
+            <Button Name="btnLanguageImage" Grid.Row="2" Grid.Column="0"  Background="Transparent" IsEnabled="False" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="\Images\Login\language.png" Stretch="Uniform"/>
+                </StackPanel>
+            </Button>
+            <ComboBox x:Name="cmbLanguage"  DisplayMemberPath="LANGUAGEDSC" SelectedValuePath="LANGUAGECDE" Grid.Row="2" Grid.Column="1"  VerticalContentAlignment="Center"/>
+            
+            <Button Name="btnLogin" Content="لاگ ان" FontSize="30" HorizontalAlignment="Center" FontFamily="/fonts/#Jameel Noori Nastaleeq"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Click="btnLogin_Click"   IsDefault="True" />
+        </Grid>
+    </Grid>
+</Window>

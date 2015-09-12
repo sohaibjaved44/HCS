@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HCSMLModelStoreContainer" CdmEntityContainer="HCSMLEntities2">
+    <EntitySetMapping Name="bankusers">
+      <EntityTypeMapping TypeName="HCSMLModel.bankuser">
+        <MappingFragment StoreEntitySet="bankuser">
+          <ScalarProperty Name="bankid" ColumnName="bankid" />
+          <ScalarProperty Name="bankname_e" ColumnName="bankname_e" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address_e" ColumnName="address_e" />
+          <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+          <ScalarProperty Name="imagetobyte" ColumnName="imagetobyte" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="bankname_u" ColumnName="bankname_u" />
+          <ScalarProperty Name="address_u" ColumnName="address_u" />
+          <ScalarProperty Name="bankaccountnumber" ColumnName="bankaccountnumber" />
+          <ScalarProperty Name="bankbranch_e" ColumnName="bankbranch_e" />
+          <ScalarProperty Name="bankbranch_u" ColumnName="bankbranch_u" />
+          <ScalarProperty Name="bankAccountTitle_e" ColumnName="bankAccountTitle_e" />
+          <ScalarProperty Name="bankAccountTitle_u" ColumnName="bankAccountTitle_u" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="companyusers">
+      <EntityTypeMapping TypeName="HCSMLModel.companyuser">
+        <MappingFragment StoreEntitySet="companyuser">
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="companyname_e" ColumnName="companyname_e" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address_e" ColumnName="address_e" />
+          <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+          <ScalarProperty Name="imagetobyte" ColumnName="imagetobyte" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="companyname_u" ColumnName="companyname_u" />
+          <ScalarProperty Name="address_u" ColumnName="address_u" />
+          <ScalarProperty Name="bankaccountnumber" ColumnName="bankaccountnumber" />
+          <ScalarProperty Name="bankbranch_e" ColumnName="bankbranch_e" />
+          <ScalarProperty Name="bankbranch_u" ColumnName="bankbranch_u" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedMillTotalRecievables">
+      <EntityTypeMapping TypeName="HCSMLModel.FeedMillTotalRecievable">
+        <MappingFragment StoreEntitySet="FeedMillTotalRecievable">
+          <ScalarProperty Name="feedmillid" ColumnName="feedmillid" />
+          <ScalarProperty Name="totalPriceRecievable" ColumnName="totalPriceRecievable" />
+          <ScalarProperty Name="totalPayable" ColumnName="totalPayable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="feedmillusers">
+      <EntityTypeMapping TypeName="HCSMLModel.feedmilluser">
+        <MappingFragment StoreEntitySet="feedmilluser">
+          <ScalarProperty Name="feedmillid" ColumnName="feedmillid" />
+          <ScalarProperty Name="feemillname_e" ColumnName="feemillname_e" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address_e" ColumnName="address_e" />
+          <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+          <ScalarProperty Name="imagetobyte" ColumnName="imagetobyte" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="feedmillname_u" ColumnName="feedmillname_u" />
+          <ScalarProperty Name="address_u" ColumnName="address_u" />
+          <ScalarProperty Name="bankaccountnumber" ColumnName="bankaccountnumber" />
+          <ScalarProperty Name="bankbranch_e" ColumnName="bankbranch_e" />
+          <ScalarProperty Name="bankbranch_u" ColumnName="bankbranch_u" />
+          <ScalarProperty Name="numOfDealingAuthority" ColumnName="numOfDealingAuthority" />
+          <ScalarProperty Name="numOfPaymentAuthority" ColumnName="numOfPaymentAuthority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="individualusers">
+      <EntityTypeMapping TypeName="HCSMLModel.individualuser">
+        <MappingFragment StoreEntitySet="individualuser">
+          <ScalarProperty Name="individualid" ColumnName="individualid" />
+          <ScalarProperty Name="name_e" ColumnName="name_e" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address_e" ColumnName="address_e" />
+          <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+          <ScalarProperty Name="imagetobyte" ColumnName="imagetobyte" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="name_u" ColumnName="name_u" />
+          <ScalarProperty Name="address_u" ColumnName="address_u" />
+          <ScalarProperty Name="bankaccountnumber" ColumnName="bankaccountnumber" />
+          <ScalarProperty Name="bankbranch_e" ColumnName="bankbranch_e" />
+          <ScalarProperty Name="bankbranch_u" ColumnName="bankbranch_u" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logins">
+      <EntityTypeMapping TypeName="HCSMLModel.login">
+        <MappingFragment StoreEntitySet="login">
+          <ScalarProperty Name="seq_id" ColumnName="seq_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="can_edit" ColumnName="can_edit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="HCSMLModel.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="productid" ColumnName="productid" />
+          <ScalarProperty Name="productname_e" ColumnName="productname_e" />
+          <ScalarProperty Name="producttype" ColumnName="producttype" />
+          <ScalarProperty Name="productname_u" ColumnName="productname_u" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producttypes">
+      <EntityTypeMapping TypeName="HCSMLModel.producttype">
+        <MappingFragment StoreEntitySet="producttype">
+          <ScalarProperty Name="product_type_cde" ColumnName="product_type_cde" />
+          <ScalarProperty Name="product_type_dsc" ColumnName="product_type_dsc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchaseproducts">
+      <EntityTypeMapping TypeName="HCSMLModel.purchaseproduct">
+        <MappingFragment StoreEntitySet="purchaseproduct">
+          <ScalarProperty Name="seqid" ColumnName="seqid" />
+          <ScalarProperty Name="productid" ColumnName="productid" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="seller_cde" ColumnName="seller_cde" />
+          <ScalarProperty Name="sellerid" ColumnName="sellerid" />
+          <ScalarProperty Name="sellername" ColumnName="sellername" />
+          <ScalarProperty Name="noofbags" ColumnName="noofbags" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+          <ScalarProperty Name="bagweight" ColumnName="bagweight" />
+          <ScalarProperty Name="extraweight" ColumnName="extraweight" />
+          <ScalarProperty Name="commission" ColumnName="commission" />
+          <ScalarProperty Name="labour" ColumnName="labour" />
+          <ScalarProperty Name="purchaserid" ColumnName="purchaserid" />
+          <ScalarProperty Name="commissionamt" ColumnName="commissionamt" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="payableprice" ColumnName="payableprice" />
+          <ScalarProperty Name="productname" ColumnName="productname" />
+          <ScalarProperty Name="totalpayable" ColumnName="totalpayable" />
+          <ScalarProperty Name="amoutpaid" ColumnName="amoutpaid" />
+          <ScalarProperty Name="purchasername" ColumnName="purchasername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchaserusers">
+      <EntityTypeMapping TypeName="HCSMLModel.purchaseruser">
+        <MappingFragment StoreEntitySet="purchaseruser">
+          <ScalarProperty Name="purchaserid" ColumnName="purchaserid" />
+          <ScalarProperty Name="purchasername_e" ColumnName="purchasername_e" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address_e" ColumnName="address_e" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+          <ScalarProperty Name="imagetobyte" ColumnName="imagetobyte" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="purchasername_u" ColumnName="purchasername_u" />
+          <ScalarProperty Name="address_u" ColumnName="address_u" />
+          <ScalarProperty Name="bankaccountnumber" ColumnName="bankaccountnumber" />
+          <ScalarProperty Name="bankbranch_e" ColumnName="bankbranch_e" />
+          <ScalarProperty Name="bankbranch_u" ColumnName="bankbranch_u" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="saleproducts">
+      <EntityTypeMapping TypeName="HCSMLModel.saleproduct">
+        <MappingFragment StoreEntitySet="saleproduct">
+          <ScalarProperty Name="seqid" ColumnName="seqid" />
+          <ScalarProperty Name="productid" ColumnName="productid" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="feedmillid" ColumnName="feedmillid" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+          <ScalarProperty Name="drivernumber" ColumnName="drivernumber" />
+          <ScalarProperty Name="vehicleno" ColumnName="vehicleno" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="recievableprice" ColumnName="recievableprice" />
+          <ScalarProperty Name="labour" ColumnName="labour" />
+          <ScalarProperty Name="totalpricerecieveable" ColumnName="totalpricerecieveable" />
+          <ScalarProperty Name="amountrecieved" ColumnName="amountrecieved" />
+          <ScalarProperty Name="productname" ColumnName="productname" />
+          <ScalarProperty Name="noofbags" ColumnName="noofbags" />
+          <ScalarProperty Name="bagweight" ColumnName="bagweight" />
+          <ScalarProperty Name="extraweight" ColumnName="extraweight" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="totalpayable" ColumnName="totalpayable" />
+          <ScalarProperty Name="fee" ColumnName="fee" />
+          <ScalarProperty Name="thread" ColumnName="thread" />
+          <ScalarProperty Name="accountcharges" ColumnName="accountcharges" />
+          <ScalarProperty Name="bardana" ColumnName="bardana" />
+          <ScalarProperty Name="commissionpercent" ColumnName="commissionpercent" />
+          <ScalarProperty Name="commissionamount" ColumnName="commissionamount" />
+          <ScalarProperty Name="purchasertypecde" ColumnName="purchasertypecde" />
+          <ScalarProperty Name="purchasername" ColumnName="purchasername" />
+          <ScalarProperty Name="saletypecde" ColumnName="saletypecde" />
+          <ScalarProperty Name="vehiclerent" ColumnName="vehiclerent" />
+          <ScalarProperty Name="sellertypecde" ColumnName="sellertypecde" />
+          <ScalarProperty Name="sellername" ColumnName="sellername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="saletypes">
+      <EntityTypeMapping TypeName="HCSMLModel.saletype">
+        <MappingFragment StoreEntitySet="saletype">
+          <ScalarProperty Name="saletypecde" ColumnName="saletypecde" />
+          <ScalarProperty Name="saletype_e" ColumnName="saletype_e" />
+          <ScalarProperty Name="saletype_u" ColumnName="saletype_u" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SellerTotalPayables">
+      <EntityTypeMapping TypeName="HCSMLModel.SellerTotalPayable">
+        <MappingFragment StoreEntitySet="SellerTotalPayable">
+          <ScalarProperty Name="seller_cde" ColumnName="seller_cde" />
+          <ScalarProperty Name="sellerid" ColumnName="sellerid" />
+          <ScalarProperty Name="totalpayable" ColumnName="totalpayable" />
+          <ScalarProperty Name="totalreceivable" ColumnName="totalreceivable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sellertypes">
+      <EntityTypeMapping TypeName="HCSMLModel.sellertype">
+        <MappingFragment StoreEntitySet="sellertype">
+          <ScalarProperty Name="seller_cde" ColumnName="seller_cde" />
+          <ScalarProperty Name="seller_des_e" ColumnName="seller_des_e" />
+          <ScalarProperty Name="seller_des_u" ColumnName="seller_des_u" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

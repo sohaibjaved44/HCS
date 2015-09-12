@@ -1,0 +1,16 @@
+﻿<Window x:Class="HCS.reportwindows.winPurchaserReportViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
+
+        WindowStartupLocation="CenterScreen"
+        Title="winPurchaserReportViewer" Height="690" Width="720">
+    <Grid>
+        <!--<Viewer:CrystalReportsViewer Name="crystalReportsViewer1"   HorizontalAlignment="Left" ToggleSidePanel="None" ShowCopyButton="False" ShowGoToPageButton="False" ShowNextPageButton="False" ShowOpenFileButton="False" ShowPrevPageButton="False" ShowSearchTextButton="False" ShowToggleSidePanelButton="False" ShowRefreshButton="False"
+                                 VerticalAlignment="Top" Height="690" Width="720" Loaded="CrystalReportViewer1_Loaded" />-->
+        <viewer:CrystalReportsViewer Name="CrystalReportsViewerSeller1" HorizontalAlignment="Left" VerticalAlignment="Top" Loaded="CrystalReportViewer1_Loaded" Height="650" Width="900"
+            ToggleSidePanel="None" ShowCopyButton="False" ShowGoToPageButton="False" ShowNextPageButton="False" ShowOpenFileButton="False" ShowPrevPageButton="False" ShowSearchTextButton="False" ShowToggleSidePanelButton="False" ShowRefreshButton="False"                                     
+                                     />
+
+    </Grid>
+</Window>

@@ -1,0 +1,227 @@
+﻿<Window x:Class="HCS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:usercontrols="clr-namespace:HCS.UserControls"
+        xmlns:local="clr-namespace:HCS"        
+        xmlns:helpers="clr-namespace:HCS.Helpers"
+        WindowStartupLocation="CenterScreen"
+        Title="AL HAMD COMMISSION SHOP" Height="700" Width="1000" Loaded="MainWindow_Loaded">
+
+    <Window.Resources>
+        <local:BoolToVisibilityConverter x:Key="booltovisibility" />
+    </Window.Resources>
+    <Grid Name="grdModel">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Ribbon x:Name="RibbonWin" Loaded="RibbonLoaded" Background="BurlyWood">
+            <Ribbon.ApplicationMenu  >
+                <RibbonApplicationMenu Visibility="Collapsed" >
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+            <RibbonTab Header="Create" KeyTip="C">
+                <RibbonGroup x:Name="ClipboardGroup">
+                    <RibbonButton LargeImageSource="Images\Individual.png" Label="Individual User"  Width="70"   Click="IndividualUser_Click" IsEnabled="{Binding Path=CANUSEREDIT}"
+                                  Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    <RibbonButton LargeImageSource="Images\company.png" Label="Company User"  Width="70" Click="CompanyUser_Click" IsEnabled="{Binding Path=CANUSEREDIT}"
+                                  Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    <RibbonButton LargeImageSource="Images\feedmilluser.png" Label="Feed Mill User" Width="70"  Click="FeedMillUser_Click"  IsEnabled="{Binding Path=CANUSEREDIT}"
+                                  Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    <RibbonButton LargeImageSource="Images\feedmilluser.png" Label="Bank User" Width="70"  Click="BankUser_Click"  IsEnabled="{Binding Path=CANUSEREDIT}"
+                                  Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+
+                    <RibbonButton LargeImageSource="Images\Individual.png" Label="انفرادی "  Width="70"   Click="IndividualUser_Click" IsEnabled="{Binding Path=CANUSEREDIT}" 
+                                  FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}" />
+                    <RibbonButton LargeImageSource="Images\company.png" Label="کمیشن شاپ"  Width="70" Click="CompanyUser_Click" IsEnabled="{Binding Path=CANUSEREDIT}"
+                                  FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    <RibbonButton LargeImageSource="Images\feedmilluser.png" Label="فیڈ مل" Width="70"  Click="FeedMillUser_Click"  IsEnabled="{Binding Path=CANUSEREDIT}"
+                                  FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    <RibbonButton LargeImageSource="Images\feedmilluser.png" Label="بنک " Width="70"  Click="BankUser_Click"  IsEnabled="{Binding Path=CANUSEREDIT}"
+                                  FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+
+                    <RibbonButton LargeImageSource="Images\purchaser.png" Visibility="Collapsed" Label="Purchaser User" Width="70" Click="PurchaserUser_Click" IsEnabled="{Binding Path=CANUSEREDIT}" />
+                </RibbonGroup>
+                <RibbonGroup >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Name="lblLogo_e" Content="AL HAMD COMMISSION SHOP" FontWeight="Bold" FontSize="30"  VerticalContentAlignment="Center" Grid.Row="0"  
+                               Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}" />
+                        <Label Name="lblLogo_u" Content="الحمد کمیشن شاپ" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="0" 
+                               FontSize="38" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}" />
+
+                        <Label Name="lblTradMark" Content="Powered By :Milenio Sol " FontWeight="Bold"   VerticalContentAlignment="Center" Grid.Row="1"  Padding="500,5,0,0"/>
+
+                    </Grid>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Purchase" KeyTip="P">
+                <RibbonGroup x:Name="PurchaseGroup" >
+
+                    <RibbonButton LargeImageSource="Images\purchase.png" Label="Purchase Product"  Width="70" Click="PurchaseProduct_Click" IsEnabled="{Binding Path=CANUSEREDIT}"
+                                  Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />                                        
+                    <RibbonButton LargeImageSource="Images\purchase.png" Label="جنس خرید"  Width="70" Click="PurchaseProduct_Click" IsEnabled="{Binding Path=CANUSEREDIT}"
+                                   FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />                                        
+                </RibbonGroup>
+                <RibbonGroup Width="755" VerticalContentAlignment="Center">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Name="lblLogo1_e" Content="AL HAMD COMMISSION SHOP" FontWeight="Bold" FontSize="30"  Grid.Row="0" VerticalContentAlignment="Center" Padding="110,5,0,0"
+                               Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}" />
+                        <Label Name="lblLogo1_u" Content="الحمد کمیشن شاپ" FontWeight="Bold" Grid.Row="0" HorizontalAlignment="Center" 
+                               FontSize="38" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}" />
+
+
+                        <Label Name="lblTradMark1" Content="Powered By :Milenio Sol " FontWeight="Bold"   VerticalContentAlignment="Center" Grid.Row="1"  Padding="570,5,0,0"/>
+
+                    </Grid>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Sale" KeyTip="S">
+                <RibbonGroup x:Name="SaleGroup" >
+                    <RibbonButton LargeImageSource="Images\FeedMill.png" Label="Sale Produt"  Width="70" Click="SaleProduct_Click" IsEnabled="{Binding Path=CANUSEREDIT}"
+                                  Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    
+
+                    <RibbonButton LargeImageSource="Images\FeedMill.png" Label="جنس فروخت"  Width="70" Click="SaleProduct_Click" IsEnabled="{Binding Path=CANUSEREDIT}"
+                                  FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    
+                </RibbonGroup>
+                <RibbonGroup Width="825" VerticalContentAlignment="Center">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Name="lblLogo2_e" Content="AL HAMD COMMISSION SHOP" Grid.Row="0" FontWeight="Bold" FontSize="30" VerticalContentAlignment="Center" Padding="180,5,0,0"
+                         Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                               />
+                        <Label Name="lblLogo2_u" Content="الحمد کمیشن شاپ" Grid.Row="0" FontWeight="Bold" HorizontalAlignment="Center"
+                         FontSize="38" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                               />
+
+
+                        <Label Name="lblTradMark2" Content="Powered By :Milenio Sol " FontWeight="Bold"   VerticalContentAlignment="Center" Grid.Row="1"  Padding="640,5,0,0"/>
+
+                    </Grid>
+
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Reports" KeyTip="R" >
+                <RibbonGroup x:Name="ReportsGroup"  >
+                    <RibbonButton LargeImageSource="Images\reports.png" Label="Generate Reports"  Width="70" Click="GenerateReport_Click"
+                               Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    <RibbonButton LargeImageSource="Images\reports.png" Label="رپورٹ بنائیں"  Width="70" Click="GenerateReport_Click" FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    
+                </RibbonGroup>
+                <RibbonGroup Width="895" VerticalContentAlignment="Center" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Name="lblLogo3_e" Content="AL HAMD COMMISSION SHOP" Grid.Row="0" FontWeight="Bold" FontSize="30" VerticalContentAlignment="Center" Padding="250,5,0,0"
+                         Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                               />
+                        <Label Name="lblLogo3_u" Content="الحمد کمیشن شاپ" Grid.Row="0" FontWeight="Bold" HorizontalAlignment="Center"
+                               FontSize="38" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                         Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                               />
+                        <Label Name="lblTradMark3" Content="Powered By :Milenio Sol " FontWeight="Bold"   VerticalContentAlignment="Center" Grid.Row="1"  Padding="710,5,0,0"/>
+                    </Grid>
+
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="History" KeyTip="R" >
+                <RibbonGroup x:Name="Histories"  >
+                    <!--<RibbonButton LargeImageSource="Images\purchase history.png" Label="Purchase History"  Width="70" Click="PurchaserHistory_Click"
+                                  Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    <RibbonButton LargeImageSource="Images\purchase history.png" Label="کھاتہ خرید"  Width="70" Click="PurchaserHistory_Click"
+                                   FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />-->
+                    
+                    
+                    <RibbonButton LargeImageSource="Images\sellerhistory.png" Label="History"  Width="70" Click="SellerHistory_Click"
+                                  Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    <RibbonButton LargeImageSource="Images\sellerhistory.png" Label="کھاتہ "  Width="70" Click="SellerHistory_Click"
+                                   FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+
+
+
+                    <RibbonButton LargeImageSource="Images\sellerhistory.png" Label="Other History"  Width="70" Click="OtherHistory_Click"
+                                  Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    <RibbonButton LargeImageSource="Images\sellerhistory.png" Label="دوسرے کھاتے "  Width="70" Click="OtherHistory_Click"
+                                   FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    <!--<RibbonButton LargeImageSource="Images\salehistory.png" Label="Feed Mill History"  Width="70" Click="FeedMillHistory_Click"
+                                  Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />
+                    <RibbonButton LargeImageSource="Images\salehistory.png" Label="کھاتہ فیڈ مل"  Width="70" Click="FeedMillHistory_Click"
+                                  FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                               Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                                  />-->
+
+                </RibbonGroup>
+                <RibbonGroup Width="895" VerticalContentAlignment="Center" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Name="lblLogo31_e" Content="AL HAMD COMMISSION SHOP" Grid.Row="0" FontWeight="Bold" FontSize="30" VerticalContentAlignment="Center" Padding="250,5,0,0"
+                         Visibility = "{Binding Path=MainWin.isenglishvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                               />
+                        <Label Name="lblLogo31_u" Content="الحمد کمیشن شاپ" Grid.Row="0" FontWeight="Bold" HorizontalAlignment="Center"
+                               FontSize="38" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                         Visibility = "{Binding Path=MainWin.isurduvisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booltovisibility}}"
+                               />
+                        <Label Name="lblTradMark31" Content="Powered By :Milenio Sol " FontWeight="Bold"   VerticalContentAlignment="Center" Grid.Row="1"  Padding="710,5,0,0"/>
+                    </Grid>
+
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <Grid Grid.Row="1" >
+                        
+            <TabControl Name="GenericTabs">
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>

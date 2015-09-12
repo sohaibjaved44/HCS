@@ -1,0 +1,979 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HCSMLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="activitycde" />
+          </Key>
+          <Property Name="activitycde" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="activityname" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bankuser">
+          <Key>
+            <PropertyRef Name="bankid" />
+          </Key>
+          <Property Name="bankid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bankname_e" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_e" Type="nvarchar" MaxLength="300" />
+          <Property Name="imagepath" Type="nvarchar(max)" />
+          <Property Name="imagetobyte" Type="varbinary(max)" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="bankname_u" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_u" Type="nchar" MaxLength="300" />
+          <Property Name="bankaccountnumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="bankbranch_e" Type="nvarchar" MaxLength="50" />
+          <Property Name="bankbranch_u" Type="nvarchar" MaxLength="50" />
+          <Property Name="bankAccountTitle_e" Type="nvarchar" MaxLength="30" />
+          <Property Name="bankAccountTitle_u" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="companyuser">
+          <Key>
+            <PropertyRef Name="companyid" />
+          </Key>
+          <Property Name="companyid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="companyname_e" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_e" Type="nvarchar" MaxLength="300" />
+          <Property Name="imagepath" Type="nvarchar(max)" />
+          <Property Name="imagetobyte" Type="varbinary(max)" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="companyname_u" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_u" Type="nchar" MaxLength="300" />
+          <Property Name="bankaccountnumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="bankbranch_e" Type="nvarchar" MaxLength="50" />
+          <Property Name="bankbranch_u" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FeedMillTotalRecievable">
+          <Key>
+            <PropertyRef Name="feedmillid" />
+          </Key>
+          <Property Name="feedmillid" Type="int" Nullable="false" />
+          <Property Name="totalPriceRecievable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalPayable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="feedmilluser">
+          <Key>
+            <PropertyRef Name="feedmillid" />
+          </Key>
+          <Property Name="feedmillid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="feemillname_e" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_e" Type="nvarchar" MaxLength="300" />
+          <Property Name="imagepath" Type="nvarchar(max)" />
+          <Property Name="imagetobyte" Type="varbinary(max)" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="feedmillname_u" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_u" Type="nchar" MaxLength="300" />
+          <Property Name="bankaccountnumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="bankbranch_e" Type="nvarchar" MaxLength="50" />
+          <Property Name="bankbranch_u" Type="nvarchar" MaxLength="50" />
+          <Property Name="numOfDealingAuthority" Type="int" />
+          <Property Name="numOfPaymentAuthority" Type="int" />
+        </EntityType>
+        <EntityType Name="individualuser">
+          <Key>
+            <PropertyRef Name="individualid" />
+          </Key>
+          <Property Name="individualid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_e" Type="nvarchar" MaxLength="50" />
+          <Property Name="mobile" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="30" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_e" Type="nvarchar" MaxLength="300" />
+          <Property Name="imagepath" Type="nvarchar(max)" />
+          <Property Name="imagetobyte" Type="varbinary(max)" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="name_u" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_u" Type="nvarchar" MaxLength="300" />
+          <Property Name="bankaccountnumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="bankbranch_e" Type="nvarchar" MaxLength="50" />
+          <Property Name="bankbranch_u" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Khata">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sellertypecode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="productid" Type="int" Nullable="false" />
+          <Property Name="purchasertypecode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="bpid" Type="int" Nullable="false" />
+          <Property Name="payable_naam" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="receivable_jama" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="activitycode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="totalreceivable_jama" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalpayable_naam" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="purchaseproductid" Type="int" Nullable="false" />
+          <Property Name="saleproductid" Type="int" Nullable="false" />
+          <Property Name="entrycode" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="transactionId" Type="int" />
+        </EntityType>
+        <EntityType Name="KhataTypeCode">
+          <Key>
+            <PropertyRef Name="khatatypecde" />
+          </Key>
+          <Property Name="khatatypecde" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="khataname_e" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="khataname_u" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="seq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="can_edit" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtherKhata">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="payable_naam" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="receivable_jama" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="productname" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="weight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="khatatypecde" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="totalreceivable_jama" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalpayable_naam" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="sellerid" Type="int" Nullable="false" />
+          <Property Name="purchaserid" Type="int" Nullable="false" />
+          <Property Name="activitycode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="sellertypecode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="purchasertypecode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="purchaseproductid" Type="int" Nullable="false" />
+          <Property Name="saleproductid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="productid" />
+          </Key>
+          <Property Name="productid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productname_e" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="producttype" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="productname_u" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="producttype">
+          <Key>
+            <PropertyRef Name="product_type_cde" />
+          </Key>
+          <Property Name="product_type_cde" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="product_type_dsc" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="purchaseproduct">
+          <Key>
+            <PropertyRef Name="seqid" />
+          </Key>
+          <Property Name="seqid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productid" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="seller_cde" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="sellerid" Type="int" Nullable="false" />
+          <Property Name="sellername" Type="nvarchar" MaxLength="30" />
+          <Property Name="noofbags" Type="int" Nullable="false" />
+          <Property Name="rate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="bagweight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="extraweight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="commission" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="labour" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="purchaserid" Type="int" Nullable="false" />
+          <Property Name="commissionamt" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="payableprice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="productname" Type="nvarchar" MaxLength="30" />
+          <Property Name="totalpayable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="amoutpaid" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="purchasername" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="purchaseruser">
+          <Key>
+            <PropertyRef Name="purchaserid" />
+          </Key>
+          <Property Name="purchaserid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="purchasername_e" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="mobile" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="30" />
+          <Property Name="address_e" Type="nvarchar" MaxLength="300" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="imagepath" Type="nvarchar(max)" />
+          <Property Name="imagetobyte" Type="varbinary(max)" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="purchasername_u" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_u" Type="nvarchar" MaxLength="300" />
+          <Property Name="bankaccountnumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="bankbranch_e" Type="nvarchar" MaxLength="50" />
+          <Property Name="bankbranch_u" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="saleproduct">
+          <Key>
+            <PropertyRef Name="seqid" />
+          </Key>
+          <Property Name="seqid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productid" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="feedmillid" Type="int" Nullable="false" />
+          <Property Name="rate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="drivernumber" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="vehicleno" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="recievableprice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="labour" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalpricerecieveable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="amountrecieved" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="productname" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="noofbags" Type="int" Nullable="false" />
+          <Property Name="bagweight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="extraweight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="weight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalpayable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="fee" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="thread" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="accountcharges" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="bardana" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="commissionpercent" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="commissionamount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="purchasertypecde" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="purchasername" Type="nvarchar" MaxLength="50" />
+          <Property Name="saletypecde" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="vehiclerent" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="sellertypecde" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="sellername" Type="nvarchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="saletype">
+          <Key>
+            <PropertyRef Name="saletypecde" />
+          </Key>
+          <Property Name="saletypecde" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="saletype_e" Type="nvarchar" MaxLength="50" />
+          <Property Name="saletype_u" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SellerTotalPayable">
+          <Key>
+            <PropertyRef Name="seller_cde" />
+            <PropertyRef Name="sellerid" />
+          </Key>
+          <Property Name="seller_cde" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="sellerid" Type="int" Nullable="false" />
+          <Property Name="totalpayable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalreceivable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sellertype">
+          <Key>
+            <PropertyRef Name="seller_cde" />
+          </Key>
+          <Property Name="seller_cde" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="seller_des_e" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="seller_des_u" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <Association Name="FK_product_producttype">
+          <End Role="producttype" Type="Self.producttype" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="producttype">
+              <PropertyRef Name="product_type_cde" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="producttype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_purchaseproduct_sellertype">
+          <End Role="sellertype" Type="Self.sellertype" Multiplicity="1" />
+          <End Role="purchaseproduct" Type="Self.purchaseproduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sellertype">
+              <PropertyRef Name="seller_cde" />
+            </Principal>
+            <Dependent Role="purchaseproduct">
+              <PropertyRef Name="seller_cde" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HCSMLModelStoreContainer">
+          <EntitySet Name="Activity" EntityType="Self.Activity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="bankuser" EntityType="Self.bankuser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="companyuser" EntityType="Self.companyuser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FeedMillTotalRecievable" EntityType="Self.FeedMillTotalRecievable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="feedmilluser" EntityType="Self.feedmilluser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="individualuser" EntityType="Self.individualuser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Khata" EntityType="Self.Khata" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KhataTypeCode" EntityType="Self.KhataTypeCode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OtherKhata" EntityType="Self.OtherKhata" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="producttype" EntityType="Self.producttype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="purchaseproduct" EntityType="Self.purchaseproduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="purchaseruser" EntityType="Self.purchaseruser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="saleproduct" EntityType="Self.saleproduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="saletype" EntityType="Self.saletype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SellerTotalPayable" EntityType="Self.SellerTotalPayable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sellertype" EntityType="Self.sellertype" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_product_producttype" Association="Self.FK_product_producttype">
+            <End Role="producttype" EntitySet="producttype" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_purchaseproduct_sellertype" Association="Self.FK_purchaseproduct_sellertype">
+            <End Role="sellertype" EntitySet="sellertype" />
+            <End Role="purchaseproduct" EntitySet="purchaseproduct" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HCSMLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="activitycde" />
+          </Key>
+          <Property Name="activitycde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="activityname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bankuser">
+          <Key>
+            <PropertyRef Name="bankid" />
+          </Key>
+          <Property Name="bankid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bankname_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address_e" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="imagepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="imagetobyte" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="bankname_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address_u" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+          <Property Name="bankaccountnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankbranch_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankbranch_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankAccountTitle_e" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="bankAccountTitle_u" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="companyuser">
+          <Key>
+            <PropertyRef Name="companyid" />
+          </Key>
+          <Property Name="companyid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="companyname_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address_e" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="imagepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="imagetobyte" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="companyname_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address_u" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+          <Property Name="bankaccountnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankbranch_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankbranch_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FeedMillTotalRecievable">
+          <Key>
+            <PropertyRef Name="feedmillid" />
+          </Key>
+          <Property Name="feedmillid" Type="Int32" Nullable="false" />
+          <Property Name="totalPriceRecievable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalPayable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="feedmilluser">
+          <Key>
+            <PropertyRef Name="feedmillid" />
+          </Key>
+          <Property Name="feedmillid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="feemillname_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address_e" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="imagepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="imagetobyte" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="feedmillname_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address_u" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+          <Property Name="bankaccountnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankbranch_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankbranch_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="numOfDealingAuthority" Type="Int32" />
+          <Property Name="numOfPaymentAuthority" Type="Int32" />
+        </EntityType>
+        <EntityType Name="individualuser">
+          <Key>
+            <PropertyRef Name="individualid" />
+          </Key>
+          <Property Name="individualid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mobile" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address_e" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="imagepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="imagetobyte" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="name_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address_u" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="bankaccountnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankbranch_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankbranch_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Khata">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sellertypecode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="productid" Type="Int32" Nullable="false" />
+          <Property Name="purchasertypecode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="payable_naam" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="receivable_jama" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="activitycode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="totalreceivable_jama" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalpayable_naam" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="purchaseproductid" Type="Int32" Nullable="false" />
+          <Property Name="saleproductid" Type="Int32" Nullable="false" />
+          <Property Name="entrycode" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="bpid" Type="Int32" Nullable="false" />
+          <Property Name="transactionId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="KhataTypeCode">
+          <Key>
+            <PropertyRef Name="khatatypecde" />
+          </Key>
+          <Property Name="khatatypecde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="khataname_e" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="khataname_u" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="seq_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="can_edit" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtherKhata">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="payable_naam" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="receivable_jama" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="productname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="weight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="khatatypecde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="totalreceivable_jama" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalpayable_naam" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="sellerid" Type="Int32" Nullable="false" />
+          <Property Name="purchaserid" Type="Int32" Nullable="false" />
+          <Property Name="activitycode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sellertypecode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="purchasertypecode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="purchaseproductid" Type="Int32" Nullable="false" />
+          <Property Name="saleproductid" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="productid" />
+          </Key>
+          <Property Name="productid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productname_e" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="producttype" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="productname_u" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="producttype1" Relationship="Self.FK_product_producttype" FromRole="product" ToRole="producttype" />
+        </EntityType>
+        <EntityType Name="producttype">
+          <Key>
+            <PropertyRef Name="product_type_cde" />
+          </Key>
+          <Property Name="product_type_cde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="product_type_dsc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="products" Relationship="Self.FK_product_producttype" FromRole="producttype" ToRole="product" />
+        </EntityType>
+        <EntityType Name="purchaseproduct">
+          <Key>
+            <PropertyRef Name="seqid" />
+          </Key>
+          <Property Name="seqid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productid" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="seller_cde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sellerid" Type="Int32" Nullable="false" />
+          <Property Name="sellername" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="noofbags" Type="Int32" Nullable="false" />
+          <Property Name="rate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="bagweight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="extraweight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="commission" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="labour" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="purchaserid" Type="Int32" Nullable="false" />
+          <Property Name="commissionamt" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="payableprice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="productname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="totalpayable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="amoutpaid" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="purchasername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="sellertype" Relationship="Self.FK_purchaseproduct_sellertype" FromRole="purchaseproduct" ToRole="sellertype" />
+        </EntityType>
+        <EntityType Name="purchaseruser">
+          <Key>
+            <PropertyRef Name="purchaserid" />
+          </Key>
+          <Property Name="purchaserid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="purchasername_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="address_e" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="imagepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="imagetobyte" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="purchasername_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address_u" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="bankaccountnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankbranch_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankbranch_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="saleproduct">
+          <Key>
+            <PropertyRef Name="seqid" />
+          </Key>
+          <Property Name="seqid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productid" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="feedmillid" Type="Int32" Nullable="false" />
+          <Property Name="rate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="drivernumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="vehicleno" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="recievableprice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="labour" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalpricerecieveable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="amountrecieved" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="productname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="noofbags" Type="Int32" Nullable="false" />
+          <Property Name="bagweight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="extraweight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="weight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalpayable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="fee" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="thread" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="accountcharges" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="bardana" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="commissionpercent" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="commissionamount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="purchasertypecde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="purchasername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="saletypecde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="vehiclerent" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sellertypecde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sellername" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="saletype">
+          <Key>
+            <PropertyRef Name="saletypecde" />
+          </Key>
+          <Property Name="saletypecde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="saletype_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="saletype_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SellerTotalPayable">
+          <Key>
+            <PropertyRef Name="seller_cde" />
+            <PropertyRef Name="sellerid" />
+          </Key>
+          <Property Name="seller_cde" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sellerid" Type="Int32" Nullable="false" />
+          <Property Name="totalpayable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalreceivable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sellertype">
+          <Key>
+            <PropertyRef Name="seller_cde" />
+          </Key>
+          <Property Name="seller_cde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="seller_des_e" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="seller_des_u" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="purchaseproducts" Relationship="Self.FK_purchaseproduct_sellertype" FromRole="sellertype" ToRole="purchaseproduct" />
+        </EntityType>
+        <Association Name="FK_product_producttype">
+          <End Role="producttype" Type="Self.producttype" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="producttype">
+              <PropertyRef Name="product_type_cde" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="producttype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_purchaseproduct_sellertype">
+          <End Role="sellertype" Type="Self.sellertype" Multiplicity="1" />
+          <End Role="purchaseproduct" Type="Self.purchaseproduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sellertype">
+              <PropertyRef Name="seller_cde" />
+            </Principal>
+            <Dependent Role="purchaseproduct">
+              <PropertyRef Name="seller_cde" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HCSMLEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Activities" EntityType="Self.Activity" />
+          <EntitySet Name="bankusers" EntityType="Self.bankuser" />
+          <EntitySet Name="companyusers" EntityType="Self.companyuser" />
+          <EntitySet Name="FeedMillTotalRecievables" EntityType="Self.FeedMillTotalRecievable" />
+          <EntitySet Name="feedmillusers" EntityType="Self.feedmilluser" />
+          <EntitySet Name="individualusers" EntityType="Self.individualuser" />
+          <EntitySet Name="Khatas" EntityType="Self.Khata" />
+          <EntitySet Name="KhataTypeCodes" EntityType="Self.KhataTypeCode" />
+          <EntitySet Name="logins" EntityType="Self.login" />
+          <EntitySet Name="OtherKhatas" EntityType="Self.OtherKhata" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="producttypes" EntityType="Self.producttype" />
+          <EntitySet Name="purchaseproducts" EntityType="Self.purchaseproduct" />
+          <EntitySet Name="purchaserusers" EntityType="Self.purchaseruser" />
+          <EntitySet Name="saleproducts" EntityType="Self.saleproduct" />
+          <EntitySet Name="saletypes" EntityType="Self.saletype" />
+          <EntitySet Name="SellerTotalPayables" EntityType="Self.SellerTotalPayable" />
+          <EntitySet Name="sellertypes" EntityType="Self.sellertype" />
+          <AssociationSet Name="FK_product_producttype" Association="Self.FK_product_producttype">
+            <End Role="producttype" EntitySet="producttypes" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_purchaseproduct_sellertype" Association="Self.FK_purchaseproduct_sellertype">
+            <End Role="sellertype" EntitySet="sellertypes" />
+            <End Role="purchaseproduct" EntitySet="purchaseproducts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HCSMLModelStoreContainer" CdmEntityContainer="HCSMLEntities1">
+          <EntitySetMapping Name="Activities">
+            <EntityTypeMapping TypeName="HCSMLModel.Activity">
+              <MappingFragment StoreEntitySet="Activity">
+                <ScalarProperty Name="activitycde" ColumnName="activitycde" />
+                <ScalarProperty Name="activityname" ColumnName="activityname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bankusers">
+            <EntityTypeMapping TypeName="HCSMLModel.bankuser">
+              <MappingFragment StoreEntitySet="bankuser">
+                <ScalarProperty Name="bankid" ColumnName="bankid" />
+                <ScalarProperty Name="bankname_e" ColumnName="bankname_e" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="address_e" ColumnName="address_e" />
+                <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+                <ScalarProperty Name="imagetobyte" ColumnName="imagetobyte" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="bankname_u" ColumnName="bankname_u" />
+                <ScalarProperty Name="address_u" ColumnName="address_u" />
+                <ScalarProperty Name="bankaccountnumber" ColumnName="bankaccountnumber" />
+                <ScalarProperty Name="bankbranch_e" ColumnName="bankbranch_e" />
+                <ScalarProperty Name="bankbranch_u" ColumnName="bankbranch_u" />
+                <ScalarProperty Name="bankAccountTitle_e" ColumnName="bankAccountTitle_e" />
+                <ScalarProperty Name="bankAccountTitle_u" ColumnName="bankAccountTitle_u" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="companyusers">
+            <EntityTypeMapping TypeName="HCSMLModel.companyuser">
+              <MappingFragment StoreEntitySet="companyuser">
+                <ScalarProperty Name="companyid" ColumnName="companyid" />
+                <ScalarProperty Name="companyname_e" ColumnName="companyname_e" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="address_e" ColumnName="address_e" />
+                <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+                <ScalarProperty Name="imagetobyte" ColumnName="imagetobyte" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="companyname_u" ColumnName="companyname_u" />
+                <ScalarProperty Name="address_u" ColumnName="address_u" />
+                <ScalarProperty Name="bankaccountnumber" ColumnName="bankaccountnumber" />
+                <ScalarProperty Name="bankbranch_e" ColumnName="bankbranch_e" />
+                <ScalarProperty Name="bankbranch_u" ColumnName="bankbranch_u" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeedMillTotalRecievables">
+            <EntityTypeMapping TypeName="HCSMLModel.FeedMillTotalRecievable">
+              <MappingFragment StoreEntitySet="FeedMillTotalRecievable">
+                <ScalarProperty Name="feedmillid" ColumnName="feedmillid" />
+                <ScalarProperty Name="totalPriceRecievable" ColumnName="totalPriceRecievable" />
+                <ScalarProperty Name="totalPayable" ColumnName="totalPayable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="feedmillusers">
+            <EntityTypeMapping TypeName="HCSMLModel.feedmilluser">
+              <MappingFragment StoreEntitySet="feedmilluser">
+                <ScalarProperty Name="feedmillid" ColumnName="feedmillid" />
+                <ScalarProperty Name="feemillname_e" ColumnName="feemillname_e" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="address_e" ColumnName="address_e" />
+                <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+                <ScalarProperty Name="imagetobyte" ColumnName="imagetobyte" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="feedmillname_u" ColumnName="feedmillname_u" />
+                <ScalarProperty Name="address_u" ColumnName="address_u" />
+                <ScalarProperty Name="bankaccountnumber" ColumnName="bankaccountnumber" />
+                <ScalarProperty Name="bankbranch_e" ColumnName="bankbranch_e" />
+                <ScalarProperty Name="bankbranch_u" ColumnName="bankbranch_u" />
+                <ScalarProperty Name="numOfDealingAuthority" ColumnName="numOfDealingAuthority" />
+                <ScalarProperty Name="numOfPaymentAuthority" ColumnName="numOfPaymentAuthority" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="individualusers">
+            <EntityTypeMapping TypeName="HCSMLModel.individualuser">
+              <MappingFragment StoreEntitySet="individualuser">
+                <ScalarProperty Name="individualid" ColumnName="individualid" />
+                <ScalarProperty Name="name_e" ColumnName="name_e" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="address_e" ColumnName="address_e" />
+                <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+                <ScalarProperty Name="imagetobyte" ColumnName="imagetobyte" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="name_u" ColumnName="name_u" />
+                <ScalarProperty Name="address_u" ColumnName="address_u" />
+                <ScalarProperty Name="bankaccountnumber" ColumnName="bankaccountnumber" />
+                <ScalarProperty Name="bankbranch_e" ColumnName="bankbranch_e" />
+                <ScalarProperty Name="bankbranch_u" ColumnName="bankbranch_u" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Khatas">
+            <EntityTypeMapping TypeName="HCSMLModel.Khata">
+              <MappingFragment StoreEntitySet="Khata">
+                <ScalarProperty Name="transactionId" ColumnName="transactionId" />
+                <ScalarProperty Name="bpid" ColumnName="bpid" />
+                <ScalarProperty Name="entrycode" ColumnName="entrycode" />
+                <ScalarProperty Name="saleproductid" ColumnName="saleproductid" />
+                <ScalarProperty Name="purchaseproductid" ColumnName="purchaseproductid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sellertypecode" ColumnName="sellertypecode" />
+                <ScalarProperty Name="productid" ColumnName="productid" />
+                <ScalarProperty Name="purchasertypecode" ColumnName="purchasertypecode" />
+                <ScalarProperty Name="payable_naam" ColumnName="payable_naam" />
+                <ScalarProperty Name="receivable_jama" ColumnName="receivable_jama" />
+                <ScalarProperty Name="activitycode" ColumnName="activitycode" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="totalreceivable_jama" ColumnName="totalreceivable_jama" />
+                <ScalarProperty Name="totalpayable_naam" ColumnName="totalpayable_naam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KhataTypeCodes">
+            <EntityTypeMapping TypeName="HCSMLModel.KhataTypeCode">
+              <MappingFragment StoreEntitySet="KhataTypeCode">
+                <ScalarProperty Name="khataname_u" ColumnName="khataname_u" />
+                <ScalarProperty Name="khataname_e" ColumnName="khataname_e" />
+                <ScalarProperty Name="khatatypecde" ColumnName="khatatypecde" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="logins">
+            <EntityTypeMapping TypeName="HCSMLModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="seq_id" ColumnName="seq_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="can_edit" ColumnName="can_edit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtherKhatas">
+            <EntityTypeMapping TypeName="HCSMLModel.OtherKhata">
+              <MappingFragment StoreEntitySet="OtherKhata">
+                <ScalarProperty Name="saleproductid" ColumnName="saleproductid" />
+                <ScalarProperty Name="purchaseproductid" ColumnName="purchaseproductid" />
+                <ScalarProperty Name="purchasertypecode" ColumnName="purchasertypecode" />
+                <ScalarProperty Name="sellertypecode" ColumnName="sellertypecode" />
+                <ScalarProperty Name="activitycode" ColumnName="activitycode" />
+                <ScalarProperty Name="purchaserid" ColumnName="purchaserid" />
+                <ScalarProperty Name="sellerid" ColumnName="sellerid" />
+                <ScalarProperty Name="totalpayable_naam" ColumnName="totalpayable_naam" />
+                <ScalarProperty Name="totalreceivable_jama" ColumnName="totalreceivable_jama" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="payable_naam" ColumnName="payable_naam" />
+                <ScalarProperty Name="receivable_jama" ColumnName="receivable_jama" />
+                <ScalarProperty Name="productname" ColumnName="productname" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="khatatypecde" ColumnName="khatatypecde" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="HCSMLModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="productid" ColumnName="productid" />
+                <ScalarProperty Name="productname_e" ColumnName="productname_e" />
+                <ScalarProperty Name="producttype" ColumnName="producttype" />
+                <ScalarProperty Name="productname_u" ColumnName="productname_u" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="producttypes">
+            <EntityTypeMapping TypeName="HCSMLModel.producttype">
+              <MappingFragment StoreEntitySet="producttype">
+                <ScalarProperty Name="product_type_cde" ColumnName="product_type_cde" />
+                <ScalarProperty Name="product_type_dsc" ColumnName="product_type_dsc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="purchaseproducts">
+            <EntityTypeMapping TypeName="HCSMLModel.purchaseproduct">
+              <MappingFragment StoreEntitySet="purchaseproduct">
+                <ScalarProperty Name="seqid" ColumnName="seqid" />
+                <ScalarProperty Name="productid" ColumnName="productid" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="seller_cde" ColumnName="seller_cde" />
+                <ScalarProperty Name="sellerid" ColumnName="sellerid" />
+                <ScalarProperty Name="sellername" ColumnName="sellername" />
+                <ScalarProperty Name="noofbags" ColumnName="noofbags" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="bagweight" ColumnName="bagweight" />
+                <ScalarProperty Name="extraweight" ColumnName="extraweight" />
+                <ScalarProperty Name="commission" ColumnName="commission" />
+                <ScalarProperty Name="labour" ColumnName="labour" />
+                <ScalarProperty Name="purchaserid" ColumnName="purchaserid" />
+                <ScalarProperty Name="commissionamt" ColumnName="commissionamt" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="payableprice" ColumnName="payableprice" />
+                <ScalarProperty Name="productname" ColumnName="productname" />
+                <ScalarProperty Name="totalpayable" ColumnName="totalpayable" />
+                <ScalarProperty Name="amoutpaid" ColumnName="amoutpaid" />
+                <ScalarProperty Name="purchasername" ColumnName="purchasername" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="purchaserusers">
+            <EntityTypeMapping TypeName="HCSMLModel.purchaseruser">
+              <MappingFragment StoreEntitySet="purchaseruser">
+                <ScalarProperty Name="purchaserid" ColumnName="purchaserid" />
+                <ScalarProperty Name="purchasername_e" ColumnName="purchasername_e" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address_e" ColumnName="address_e" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+                <ScalarProperty Name="imagetobyte" ColumnName="imagetobyte" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="purchasername_u" ColumnName="purchasername_u" />
+                <ScalarProperty Name="address_u" ColumnName="address_u" />
+                <ScalarProperty Name="bankaccountnumber" ColumnName="bankaccountnumber" />
+                <ScalarProperty Name="bankbranch_e" ColumnName="bankbranch_e" />
+                <ScalarProperty Name="bankbranch_u" ColumnName="bankbranch_u" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="saleproducts">
+            <EntityTypeMapping TypeName="HCSMLModel.saleproduct">
+              <MappingFragment StoreEntitySet="saleproduct">
+                <ScalarProperty Name="seqid" ColumnName="seqid" />
+                <ScalarProperty Name="productid" ColumnName="productid" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="feedmillid" ColumnName="feedmillid" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="drivernumber" ColumnName="drivernumber" />
+                <ScalarProperty Name="vehicleno" ColumnName="vehicleno" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="recievableprice" ColumnName="recievableprice" />
+                <ScalarProperty Name="labour" ColumnName="labour" />
+                <ScalarProperty Name="totalpricerecieveable" ColumnName="totalpricerecieveable" />
+                <ScalarProperty Name="amountrecieved" ColumnName="amountrecieved" />
+                <ScalarProperty Name="productname" ColumnName="productname" />
+                <ScalarProperty Name="noofbags" ColumnName="noofbags" />
+                <ScalarProperty Name="bagweight" ColumnName="bagweight" />
+                <ScalarProperty Name="extraweight" ColumnName="extraweight" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="totalpayable" ColumnName="totalpayable" />
+                <ScalarProperty Name="fee" ColumnName="fee" />
+                <ScalarProperty Name="thread" ColumnName="thread" />
+                <ScalarProperty Name="accountcharges" ColumnName="accountcharges" />
+                <ScalarProperty Name="bardana" ColumnName="bardana" />
+                <ScalarProperty Name="commissionpercent" ColumnName="commissionpercent" />
+                <ScalarProperty Name="commissionamount" ColumnName="commissionamount" />
+                <ScalarProperty Name="purchasertypecde" ColumnName="purchasertypecde" />
+                <ScalarProperty Name="purchasername" ColumnName="purchasername" />
+                <ScalarProperty Name="saletypecde" ColumnName="saletypecde" />
+                <ScalarProperty Name="vehiclerent" ColumnName="vehiclerent" />
+                <ScalarProperty Name="sellertypecde" ColumnName="sellertypecde" />
+                <ScalarProperty Name="sellername" ColumnName="sellername" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="saletypes">
+            <EntityTypeMapping TypeName="HCSMLModel.saletype">
+              <MappingFragment StoreEntitySet="saletype">
+                <ScalarProperty Name="saletypecde" ColumnName="saletypecde" />
+                <ScalarProperty Name="saletype_e" ColumnName="saletype_e" />
+                <ScalarProperty Name="saletype_u" ColumnName="saletype_u" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SellerTotalPayables">
+            <EntityTypeMapping TypeName="HCSMLModel.SellerTotalPayable">
+              <MappingFragment StoreEntitySet="SellerTotalPayable">
+                <ScalarProperty Name="seller_cde" ColumnName="seller_cde" />
+                <ScalarProperty Name="sellerid" ColumnName="sellerid" />
+                <ScalarProperty Name="totalpayable" ColumnName="totalpayable" />
+                <ScalarProperty Name="totalreceivable" ColumnName="totalreceivable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sellertypes">
+            <EntityTypeMapping TypeName="HCSMLModel.sellertype">
+              <MappingFragment StoreEntitySet="sellertype">
+                <ScalarProperty Name="seller_cde" ColumnName="seller_cde" />
+                <ScalarProperty Name="seller_des_e" ColumnName="seller_des_e" />
+                <ScalarProperty Name="seller_des_u" ColumnName="seller_des_u" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

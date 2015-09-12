@@ -1,0 +1,157 @@
+﻿<UserControl x:Class="HCS.UserControls.Sale.ucFeedMillHistory"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:hcs="clr-namespace:HCS"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Loaded="ucFeedMillHistory_Loaded">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="boolToVisiblityConverter"/>
+    </UserControl.Resources>
+
+    <Grid Name="grdModel" ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Name="lblFeedMillHistory" Content="Feed Mill History " Grid.Row="0"  FontWeight="Bold" Padding="60,5,0,2" Visibility="{Binding Path=ISENGLISHVISIBLE , Converter={StaticResource boolToVisiblityConverter}}"  />
+        <Label Name="lblFeedMillHistoryUrdu" Content="فیڈ مل کا ریکارڈ " Grid.Row="0"  FontWeight="Bold" Padding="60,5,0,2" 
+               FontSize="30" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+               Visibility="{Binding Path=ISURDUVISIBLE , Converter={StaticResource boolToVisiblityConverter}}"  />
+
+        <Grid Name="grdFeedMillHistory" Grid.Row="1" ShowGridLines="False" Margin="10,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition Width=".6*"/>
+                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition Width=".3*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Label Name="lblFeedMill" Content="Feed Mill :" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="2,8,2,10" Visibility="{Binding Path=ISENGLISHVISIBLE , Converter={StaticResource boolToVisiblityConverter}}"/>
+            <Label Name="lblFeedMillUrdu" Content="فیڈ مل :" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="2,8,2,10" 
+                   FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                   Visibility="{Binding Path=ISURDUVISIBLE , Converter={StaticResource boolToVisiblityConverter}}"/>
+            <ComboBox Name="cmbFeedMill" Grid.Row="0" Grid.Column="1" Margin="2,10,2,10" DisplayMemberPath="feemillname" SelectedValuePath="feedmillid"/>
+
+            <Button Name="btnSearch"  Content="Search" Grid.Row="0" Grid.Column="2" Margin="2,10,2,10" Click="btnSearch_Click" Visibility="{Binding Path=ISENGLISHVISIBLE , Converter={StaticResource boolToVisiblityConverter}}"/>
+            <Button Name="btnSearchUrdu"  Content="تلاش کریں" Grid.Row="0" Grid.Column="2" Margin="2,10,2,10" Click="btnSearch_Click" 
+                    FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                    Visibility="{Binding Path=ISURDUVISIBLE , Converter={StaticResource boolToVisiblityConverter}}"/>
+
+            <GroupBox Name="gbFeedMillHistory" Header="Sales History :" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <DataGrid Name="dgSalesHistory" CanUserAddRows="False" AutoGenerateColumns="False" RowHeight="30" Grid.Row="0" AlternationCount="2" AlternatingRowBackground="LightBlue" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True">
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="FontFamily" Value="/fonts/#Jameel Noori Nastaleeq"></Setter>
+                                <Setter Property="Padding" Value="5 2 0 2"></Setter>
+                                <Setter Property="FontWeight" Value="Bold"></Setter>
+                                <Setter Property="Height" Value="30"></Setter>
+                                <Setter Property="FontSize" Value="15"></Setter>
+                            </Style>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="FontFamily" Value="/fonts/#Jameel Noori Nastaleeq"></Setter>
+                                <Setter Property="Padding" Value="5 7 0 7"></Setter>
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Date" Width=".5*" Binding="{Binding Path=date , StringFormat='MM/dd/yyyy'}"/>
+                            <DataGridTextColumn Header="تاریخ" Width=".5*" Binding="{Binding Path=date , StringFormat='MM/dd/yyyy'}"/>
+
+
+                            <DataGridTextColumn Header="Product" Width=".5*" Binding="{Binding Path=(productname_e)}"/>
+                            <DataGridTextColumn Header="مصنوعات" Width=".5*" Binding="{Binding Path=productname_u}"/>
+
+
+
+                            <DataGridTextColumn Header="Amount Recieved"  Width=".5*" Binding="{Binding Path=amountrecieved}"/>
+                            <DataGridTextColumn Header="رقم موصول"  Width=".5*" Binding="{Binding Path=amountrecieved}"/>
+
+
+
+                            <DataGridTextColumn Header="Recievable" Width=".5*" Binding="{Binding Path=recievableprice}"/>
+                            <DataGridTextColumn Header="قابل وصول" Width=".5*" Binding="{Binding Path=recievableprice}"/>
+
+
+
+                            <DataGridTextColumn Header="Total Recievable" Width=".5*" Binding="{Binding Path=totalpricerecieveable}"/>
+                            <DataGridTextColumn Header="کل قابل وصول" Width=".5*" Binding="{Binding Path=totalpricerecieveable}"/>
+
+
+                            <DataGridTextColumn Header="Total Payable" Width=".5*" Binding="{Binding Path=totalpayable}"/>
+                            <DataGridTextColumn Header="کل قابل ادائیگی" Width=".5*" Binding="{Binding Path=totalpayable}"/>
+
+
+
+                            <DataGridTemplateColumn Header="Edit" Width=".1*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Click="EditRecord_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image Source="\Images\editpen.png" Stretch="Uniform"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            
+                            <DataGridTemplateColumn Header="ترمیم" Width=".1*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Click="EditRecord_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image Source="\Images\editpen.png" Stretch="Uniform"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                    <StackPanel Margin="4" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Margin="4,0" Click="BtnFirst_OnClick">&lt;&lt;</Button>
+                    <Button Margin="4,0" Click="BtnPrevious_OnClick">&lt;</Button>
+                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Name="StartFrom" IsEnabled="False" />
+                        <TextBlock Text=" to "/>
+                        <TextBlock Name="EndFrom" IsEnabled="False" />
+                        <TextBlock Text=" of "/>
+                        <TextBlock Name="TotalItems" IsEnabled="False" />
+                    </StackPanel>
+                    <Button Margin="4,0" Content=">" Click="BtnNext_OnClick"/>
+                    <Button Margin="4,0" Content=">>" Click="BtnLast_OnClick"/>
+                </StackPanel>
+                </Grid>
+
+            </GroupBox>
+            <Label Name="lblTotalAmountRecievalbe" Content="Total Amount Recieveable :" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="2,8,2,10" Visibility="{Binding Path=ISENGLISHVISIBLE , Converter={StaticResource boolToVisiblityConverter}}"/>
+            <Label Name="lblTotalAmountRecievalbeUrdu" Content="کل قابل وصولی :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="2,8,2,10" Visibility="{Binding Path=ISURDUVISIBLE , Converter={StaticResource boolToVisiblityConverter}}"/>
+
+            <TextBox Name="tbTotalAmountRecievable" Grid.Row="2" Grid.Column="1" Margin="2,10,2,10" IsReadOnly="True" VerticalContentAlignment="Center" />
+            <Label Name="lblAmountRecieved" Content="Amount Recieved :" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="2,8,2,10" Visibility="{Binding Path=ISENGLISHVISIBLE , Converter={StaticResource boolToVisiblityConverter}}"/>
+            <Label Name="lblAmountRecievedUrdu" Content="وصول کی گئ رقم :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="2,8,2,10" Visibility="{Binding Path=ISURDUVISIBLE , Converter={StaticResource boolToVisiblityConverter}}"/>
+
+            <TextBox Name="tbAmountRecieved" Grid.Row="2" Grid.Column="3" Margin="2,10,2,10"  VerticalContentAlignment="Center" IsEnabled="{Binding Path=CANUSEREDIT}" />
+
+
+            <Button Name="btnSave" Content="Save" Grid.Row="2" Grid.Column="4" Margin="4,10,2,10" Click="btnRecieveAmount_Click" VerticalContentAlignment="Center" IsEnabled="False" Visibility="{Binding Path=ISENGLISHVISIBLE , Converter={StaticResource boolToVisiblityConverter}}"/>
+            <Button Name="btnSaveUrdu" Content="محفوظ کریں" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="2" Grid.Column="4" Margin="4,10,2,10" Click="btnRecieveAmount_Click" VerticalContentAlignment="Center" IsEnabled="False" Visibility="{Binding Path=ISURDUVISIBLE , Converter={StaticResource boolToVisiblityConverter}}"/>
+
+        </Grid>
+    </Grid>
+</UserControl>
+

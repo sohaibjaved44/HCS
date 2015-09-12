@@ -1,0 +1,324 @@
+﻿<UserControl x:Class="HCS.UserControls.ucCompanyUser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:hcs="clr-namespace:HCS"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1100" Loaded="ucCompanyUser_Loaded">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="boolToVisiblityConverter"/>
+    </UserControl.Resources>
+    <Grid Name="grdModel" Margin="10" ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Grid Name="grdBioData" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".3*" />
+                <ColumnDefinition Width=".7*" />
+            </Grid.ColumnDefinitions>
+            
+            <Grid Name="grdUploadImage" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Label Content="Add Company User " FontWeight="Bold" Grid.Row="0" Padding="60,0,0,5"
+                   Visibility="{Binding Path=isenglishvisible , Converter={StaticResource boolToVisiblityConverter}}" />
+                <Label Content="کمپنی کا اندراج" FontSize="30" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                   FontWeight="Bold" Grid.Row="0" Padding="60,0,0,5"
+                   Visibility="{Binding Path=isurduvisible , Converter={StaticResource boolToVisiblityConverter}}" />
+
+
+                <Border Name="brdSiteLogo" BorderThickness="2" BorderBrush="#FF000000"
+                        VerticalAlignment="Top"
+                        Margin="12,0,0,0"
+                        Height="150"
+                        Width="175"
+                        Grid.Row="1">
+
+                    <Image Name="companyImgUpload"
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Stretch"
+                           Stretch="Fill" />
+
+                </Border>
+
+
+                <Button Name="btnBrowse" Content="Browse" Grid.Row="2" HorizontalAlignment="Center"
+                        VerticalAlignment="Center" Click="btnBrowse_Click" Margin="0,0,4,0"
+                        Visibility="{Binding Path=isenglishvisible , Converter={StaticResource boolToVisiblityConverter}}" />
+                <Button Name="btnBrowseUrdu" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                        Content="تصویر لگایں" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Click="btnBrowse_Click" Margin="0,0,4,0"
+                        Visibility="{Binding Path=isurduvisible , Converter={StaticResource boolToVisiblityConverter}}" />
+
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".5*"/>
+                        <ColumnDefinition Width=".5*"/>
+                        <ColumnDefinition Width=".5*"/>
+                        <ColumnDefinition Width="1.5*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Name="lblDate" Content="Date :" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right"
+                       Target="{Binding ElementName=dpDate}"
+                       Visibility="{Binding Path=isenglishvisible , Converter={StaticResource boolToVisiblityConverter}}" />
+                    <Label Name="lblDateUrdu" Content="تاریخ :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                       Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Target="{Binding ElementName=dpDate}"
+                       Visibility="{Binding Path=isurduvisible , Converter={StaticResource boolToVisiblityConverter}}" />
+
+                    <DatePicker Name="dpDate" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" SelectedDate="{Binding Path=date}" />
+                </Grid>
+
+
+                <Grid Name="grdCompanyDetail" Grid.Row="1" ShowGridLines="False" Margin="0,0,50,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".2*"/>
+                    <ColumnDefinition Width=".6*"/>
+                    <ColumnDefinition Width=".1*"/>
+                    <ColumnDefinition Width=".2*"/>
+                    <ColumnDefinition Width=".6*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Name="lblCompany" Content="Company :" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Right"
+                       Target="{Binding ElementName=tbCompany}"
+                        />
+                <Label Name="lblCompanyUrdu" Content="کمپنی کا نام :" FontSize="20"
+                       FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="0" Grid.Column="0"
+                       HorizontalAlignment="Right" Target="{Binding ElementName=tbCompany}"
+                       />
+
+                <TextBox Name="tbCompany_e" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4" 
+                         Text="{Binding Path=(companyname_e)}" MaxLength="30"
+                          />
+                <TextBox Name="tbCompany_u" VerticalAlignment="Center" FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                         Grid.Row="0" Grid.Column="1"
+                         Text="{Binding Path=(companyname_u)}" MaxLength="30"
+                         />
+
+                
+                <Label Name="lblPhone" Content="Phone :" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Right"
+                       Target="{Binding ElementName=tbPhone}"
+                       />
+                <Label Name="lblPhoneUrdu" Content="فون نمبر :" FontSize="20"
+                       FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="1" Grid.Column="0"
+                       HorizontalAlignment="Right" Target="{Binding ElementName=tbPhone}"
+                       />
+
+                <TextBox Name="tbPhone" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                         Text="{Binding Path=phone}" MaxLength="30" />
+
+                <Label Name="lblEmail" Content="Email :" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right"
+                       Target="{Binding ElementName=tbEmail}"
+                       />
+                <Label Name="lblEmailUrdu" Content="ای میل :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                       Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Target="{Binding ElementName=tbEmail}"
+                       />
+
+                <TextBox Name="tbEmail" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                         Text="{Binding Path=email}" MaxLength="50" />
+
+
+                <Label Name="lblBankAccountEng" Content="Bank Account :" Grid.Row="3" Grid.Column="3"
+                       HorizontalAlignment="Right" Target="{Binding ElementName=tbEmail}"
+                       />
+                <Label Name="lblBankAccountUr" Content="اکاوَنٹ نمبر :" FontSize="20"
+                       FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="3" Grid.Column="0"
+                       HorizontalAlignment="Right" Target="{Binding ElementName=tbEmail}"
+                       />
+                <TextBox Name="tbBankAccount" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                         Text="{Binding Path=(bankaccountnumber)}" MaxLength="50" />
+
+
+                <Label Name="lblBankBranchEng" Content="Bank Branch :" Grid.Row="4" Grid.Column="3"
+                       HorizontalAlignment="Right" Target="{Binding ElementName=tbAddress}"
+                       />
+                <Label Name="lblBankBranchUr" Content="بنک برانچ :" FontSize="20"
+                       FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="4" Grid.Column="0"
+                       HorizontalAlignment="Right" Target="{Binding ElementName=tbAddress}"
+                       />
+
+                <TextBox Name="tbBankBranch_e" Grid.Row="4" Grid.Column="4" VerticalAlignment="Center"
+                         TextWrapping="Wrap" Text="{Binding Path=(bankbranch_e)}"
+                         />
+                <TextBox Name="tbBankBranch_u" FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="4"
+                         Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" 
+                         VerticalScrollBarVisibility="Auto" Text="{Binding Path=(bankbranch_u)}"
+                         />
+
+
+                <Label Name="lblAddress" Content="Address :" Grid.Row="5" Grid.Column="3" HorizontalAlignment="Right"
+                       Target="{Binding ElementName=tbAddress}"
+                       />
+                <Label Name="lblAddressUrdu" Content="پتہ :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                       Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right"
+                       Target="{Binding ElementName=tbAddress}"
+                       />
+
+                <TextBox Name="tbAddress_e" Grid.Row="5" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                         TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
+                         Text="{Binding Path=(address_e)}" MaxLength="100"
+                         />
+                    <TextBox Name="tbAddress_u" FontSize="15" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="5"
+                         Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" TextWrapping="Wrap" 
+                         VerticalScrollBarVisibility="Auto" Text="{Binding Path=(address_u)}"
+                         MaxLength="100"
+                         />
+                    <Button Name="btnSave" Content="     Save" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" FontSize="15"
+                        Click="btnSave_Click"
+                        />
+                <Button Name="btnSaveUrdu" Content="           محفوظ کریں " FontSize="20"
+                        FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2"
+                        Click="btnSave_Click"
+                        />
+
+            </Grid>
+            </Grid>
+
+        </Grid>
+
+        <GroupBox Name="gbUserHistory" Header="Existing Company Users" Grid.Row="1" Margin="5,0,5,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <DataGrid Name="dgExistingCompany" Grid.Row="0" CanUserAddRows="False" AutoGenerateColumns="False"
+                          AlternationCount="2" AlternatingRowBackground="LightBlue" RowHeight="30" IsReadOnly="True">
+                    <DataGrid.Resources>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="FontFamily" Value="/fonts/#Jameel Noori Nastaleeq"></Setter>
+                            <Setter Property="Padding" Value="5 2 0 2"></Setter>
+                            <Setter Property="FontWeight" Value="Bold"></Setter>
+                            <Setter Property="Height" Value="30"></Setter>
+                            <Setter Property="FontSize" Value="15"></Setter>
+                        </Style>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="FontFamily" Value="/fonts/#Jameel Noori Nastaleeq"></Setter>
+                            <Setter Property="Padding" Value="5 7 0 7"></Setter>
+                        </Style>
+                        <!--<hcs:BindingProxy x:Key="Proxy" Data="{Binding (isenglishvisible), Converter={StaticResource boolToVisiblityConverter}}" ></hcs:BindingProxy>
+                        <hcs:BindingProxy x:Key="Proxy1" Data="{Binding (isurduvisible), Converter={StaticResource boolToVisiblityConverter}}" ></hcs:BindingProxy>-->
+                        <!-- and in dataGridTextColumn    Visibility="{Binding Path = Data , Source={StaticResource Proxy}}" -->
+
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Date"
+                                            Binding="{Binding Path=(date),StringFormat='MM/dd/yyyy'}"
+                                            Width=".4*">
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="تاریخ"
+                                            Binding="{Binding Path=(date),StringFormat='MM/dd/yyyy'}"
+                                            Width=".4*">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Header="Company Name" Width=".6*"
+                                            Binding="{Binding Path=(companyname_e)}">
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="کمپنی کا نام" Width=".6*"
+                                            Binding="{Binding Path=(companyname_u)}">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Header="Phone" Width=".6*" Binding="{Binding Path=phone}">
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="فون نمبر" Width=".6*" Binding="{Binding Path=phone}">
+                        </DataGridTextColumn>
+
+
+                        <DataGridTextColumn Header="Email" Width=".6*" Binding="{Binding Path=email}">
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="ای میل" Width=".6*" Binding="{Binding Path=email}">
+                        </DataGridTextColumn>
+
+
+                        <DataGridTextColumn Header="Bank Account" Width=".8*"
+                                            Binding="{Binding Path=(bankaccountnumber)}">
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header=" اکاوَنٹ نمبر" Width=".8*"
+                                            Binding="{Binding Path=(bankaccountnumber)}">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Header="Bank Branch" Width=".8*"
+                                            Binding="{Binding Path=(bankbranch_e)}">
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="بنک برانچ" Width=".8*"
+                                            Binding="{Binding Path=(bankbranch_u)}">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Header="Address" Width=".8*"
+                                            Binding="{Binding Path=(address_e)}">
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="پتہ" Width=".8*"
+                                            Binding="{Binding Path=(address_u)}">
+                        </DataGridTextColumn>
+
+                        <DataGridTemplateColumn Header="Edit" Width=".1*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Click="EditRecord_Click">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\Images\editpen.png" Stretch="Uniform" />
+                                        </StackPanel>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Header="ترمیم" Width=".1*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Click="EditRecord_Click">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\Images\editpen.png" Stretch="Uniform" />
+                                        </StackPanel>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+                <StackPanel Margin="4" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Margin="4,0" Click="BtnFirst_OnClick">&lt;&lt;</Button>
+                    <Button Margin="4,0" Click="BtnPrevious_OnClick">&lt;</Button>
+                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Name="StartFrom" IsEnabled="False" />
+                        <TextBlock Text=" to " />
+                        <TextBlock Name="EndFrom" IsEnabled="False" />
+                        <TextBlock Text=" of " />
+                        <TextBlock Name="TotalItems" IsEnabled="False" />
+                    </StackPanel>
+                    <Button Margin="4,0" Content=">" Click="BtnNext_OnClick" />
+                    <Button Margin="4,0" Content=">>" Click="BtnLast_OnClick" />
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</UserControl>

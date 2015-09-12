@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="HCS.UserControls.Reports.ucDailyReport"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="700" Loaded="ucDailyReport_Loaded">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="boolToVisiblityConverter"/>
+    </UserControl.Resources>
+
+    <Grid Name="grdModel">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Name="lblGenerateReportDesc" Content="Generate Reports " FontWeight="Bold" Grid.Row="0"  Padding="60,5,0,2" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource boolToVisiblityConverter}}"/>
+        <Label Name="lblGenerateReportDescUrdu" Content="رپورٹ دیکھیں " FontWeight="Bold" Grid.Row="0"  Padding="60,5,0,2" 
+               FontSize="30" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+               Visibility="{Binding Path=isurduvisible , Converter={StaticResource boolToVisiblityConverter}}"/>
+        <Grid Name="grdReportGeneration" Grid.Row="1" Margin="40,20,100,0" Width="600">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".4*"/>
+                <ColumnDefinition Width=".6*"/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width=".6*"/>
+            </Grid.ColumnDefinitions>
+            <Label Name="lblFrom" Content="From :" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource boolToVisiblityConverter}}"/>
+            <Label Name="lblFromUrdu" Content="شروع تاریخ :" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right"  
+                   FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                   Visibility="{Binding Path=isurduvisible , Converter={StaticResource boolToVisiblityConverter}}"/>
+
+            <DatePicker Name="dpFromDate" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" SelectedDate="{Binding Path=FROMDATE}"/>
+
+            <Label Name="lblTo" Content="To :" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource boolToVisiblityConverter}}"/>
+            <Label Name="lblToUrdu" Content="آخری تاریخ :" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right"  
+                   FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                   Visibility="{Binding Path=isurduvisible , Converter={StaticResource boolToVisiblityConverter}}"/>
+
+            <DatePicker Name="dpToDate" VerticalAlignment="Center"  Grid.Row="0" Grid.Column="3" SelectedDate="{Binding Path=TODATE}"/>
+            <Button Name="btnPurchaseReport" Content="                Report" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Click="btnPurchaseReport_Click" VerticalAlignment="Center" Margin="0,4,2,0" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource boolToVisiblityConverter}}" />
+            <Button Name="btnPurchaseReportUrdu" Content="                      رپورٹ" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Click="btnPurchaseReport_Click" VerticalAlignment="Center" Margin="0,4,2,0"  
+                    FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq"
+                    Visibility="{Binding Path=isurduvisible , Converter={StaticResource boolToVisiblityConverter}}" />
+
+
+        </Grid>
+
+        <viewer:CrystalReportsViewer Visibility="Collapsed" Grid.Row="2" Name="CrystalReportsViewerSeller1" HorizontalAlignment="Left" VerticalAlignment="Top" Loaded="CrystalReportViewer1_Loaded" Height="211" Width="300"
+            ToggleSidePanel="None" ShowCopyButton="False" ShowGoToPageButton="False" ShowNextPageButton="False" ShowOpenFileButton="False" ShowPrevPageButton="False" ShowSearchTextButton="False" ShowToggleSidePanelButton="False" ShowRefreshButton="False"
+                                     />
+
+
+    </Grid>
+</UserControl>

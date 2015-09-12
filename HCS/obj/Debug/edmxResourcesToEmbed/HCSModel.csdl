@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HCSMLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="companyuser">
+    <Key>
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="companyid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyname_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address_e" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="imagepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="imagetobyte" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="companyname_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address_u" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+    <Property Name="bankaccountnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bankbranch_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bankbranch_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FeedMillTotalRecievable">
+    <Key>
+      <PropertyRef Name="feedmillid" />
+    </Key>
+    <Property Name="feedmillid" Type="Int32" Nullable="false" />
+    <Property Name="totalPriceRecievable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="totalPayable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="feedmilluser">
+    <Key>
+      <PropertyRef Name="feedmillid" />
+    </Key>
+    <Property Name="feedmillid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="feemillname_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address_e" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="imagepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="imagetobyte" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="feedmillname_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address_u" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+    <Property Name="bankaccountnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bankbranch_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bankbranch_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="numOfDealingAuthority" Type="Int32" />
+    <Property Name="numOfPaymentAuthority" Type="Int32" />
+  </EntityType>
+  <EntityType Name="individualuser">
+    <Key>
+      <PropertyRef Name="individualid" />
+    </Key>
+    <Property Name="individualid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address_e" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="imagepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="imagetobyte" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="name_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address_u" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="bankaccountnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bankbranch_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bankbranch_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="seq_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="can_edit" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="productid" />
+    </Key>
+    <Property Name="productid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productname_e" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="producttype" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="productname_u" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="producttype1" Relationship="Self.FK_product_producttype" FromRole="product" ToRole="producttype" />
+  </EntityType>
+  <EntityType Name="producttype">
+    <Key>
+      <PropertyRef Name="product_type_cde" />
+    </Key>
+    <Property Name="product_type_cde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="product_type_dsc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="products" Relationship="Self.FK_product_producttype" FromRole="producttype" ToRole="product" />
+  </EntityType>
+  <EntityType Name="purchaseproduct">
+    <Key>
+      <PropertyRef Name="seqid" />
+    </Key>
+    <Property Name="seqid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productid" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="seller_cde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sellerid" Type="Int32" Nullable="false" />
+    <Property Name="sellername" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="noofbags" Type="Int32" Nullable="false" />
+    <Property Name="rate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="bagweight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="extraweight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="commission" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="labour" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="purchaserid" Type="Int32" Nullable="false" />
+    <Property Name="commissionamt" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="payableprice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="productname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="totalpayable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="amoutpaid" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="purchasername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="sellertype" Relationship="Self.FK_purchaseproduct_sellertype" FromRole="purchaseproduct" ToRole="sellertype" />
+  </EntityType>
+  <EntityType Name="purchaseruser">
+    <Key>
+      <PropertyRef Name="purchaserid" />
+    </Key>
+    <Property Name="purchaserid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="purchasername_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mobile" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="address_e" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="imagepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="imagetobyte" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="purchasername_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address_u" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="bankaccountnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bankbranch_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bankbranch_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="saleproduct">
+    <Key>
+      <PropertyRef Name="seqid" />
+    </Key>
+    <Property Name="seqid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productid" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="feedmillid" Type="Int32" Nullable="false" />
+    <Property Name="rate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="vehicleno" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="recievableprice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="labour" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="totalpricerecieveable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="amountrecieved" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="productname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="noofbags" Type="Int32" Nullable="false" />
+    <Property Name="bagweight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="extraweight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="weight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="totalpayable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="fee" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="thread" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="accountcharges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="drivernumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="bardana" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="commissionpercent" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="commissionamount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="purchasertypecde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="purchasername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="saletypecde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="saletype" Relationship="HCSMLModel.FK_saleproduct_saleproduct" FromRole="saleproduct" ToRole="saletype" />
+  </EntityType>
+  <EntityType Name="SellerTotalPayable">
+    <Key>
+      <PropertyRef Name="seller_cde" />
+      <PropertyRef Name="sellerid" />
+    </Key>
+    <Property Name="seller_cde" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sellerid" Type="Int32" Nullable="false" />
+    <Property Name="totalpayable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="totalreceivable" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sellertype">
+    <Key>
+      <PropertyRef Name="seller_cde" />
+    </Key>
+    <Property Name="seller_cde" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="seller_des_e" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="seller_des_u" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="purchaseproducts" Relationship="Self.FK_purchaseproduct_sellertype" FromRole="sellertype" ToRole="purchaseproduct" />
+  </EntityType>
+  <Association Name="FK_product_producttype">
+    <End Role="producttype" Type="Self.producttype" Multiplicity="1" />
+    <End Role="product" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producttype">
+        <PropertyRef Name="product_type_cde" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="producttype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_purchaseproduct_sellertype">
+    <End Role="sellertype" Type="Self.sellertype" Multiplicity="1" />
+    <End Role="purchaseproduct" Type="Self.purchaseproduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sellertype">
+        <PropertyRef Name="seller_cde" />
+      </Principal>
+      <Dependent Role="purchaseproduct">
+        <PropertyRef Name="seller_cde" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HCSMLEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="companyusers" EntityType="Self.companyuser" />
+    <EntitySet Name="FeedMillTotalRecievables" EntityType="Self.FeedMillTotalRecievable" />
+    <EntitySet Name="feedmillusers" EntityType="Self.feedmilluser" />
+    <EntitySet Name="individualusers" EntityType="Self.individualuser" />
+    <EntitySet Name="logins" EntityType="Self.login" />
+    <EntitySet Name="products" EntityType="Self.product" />
+    <EntitySet Name="producttypes" EntityType="Self.producttype" />
+    <EntitySet Name="purchaseproducts" EntityType="Self.purchaseproduct" />
+    <EntitySet Name="purchaserusers" EntityType="Self.purchaseruser" />
+    <EntitySet Name="saleproducts" EntityType="Self.saleproduct" />
+    <EntitySet Name="SellerTotalPayables" EntityType="Self.SellerTotalPayable" />
+    <EntitySet Name="sellertypes" EntityType="Self.sellertype" />
+    <AssociationSet Name="FK_product_producttype" Association="Self.FK_product_producttype">
+      <End Role="producttype" EntitySet="producttypes" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_purchaseproduct_sellertype" Association="Self.FK_purchaseproduct_sellertype">
+      <End Role="sellertype" EntitySet="sellertypes" />
+      <End Role="purchaseproduct" EntitySet="purchaseproducts" />
+    </AssociationSet>
+    <EntitySet Name="saletypes" EntityType="HCSMLModel.saletype" />
+    <AssociationSet Name="FK_saleproduct_saleproduct" Association="HCSMLModel.FK_saleproduct_saleproduct">
+      <End Role="saletype" EntitySet="saletypes" />
+      <End Role="saleproduct" EntitySet="saleproducts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="saletype">
+    <Key>
+      <PropertyRef Name="saletypecde" />
+    </Key>
+    <Property Name="saletypecde" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="saletype_e" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="saletype_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="saleproducts" Relationship="HCSMLModel.FK_saleproduct_saleproduct" FromRole="saletype" ToRole="saleproduct" />
+  </EntityType>
+  <Association Name="FK_saleproduct_saleproduct">
+    <End Type="HCSMLModel.saletype" Role="saletype" Multiplicity="0..1" />
+    <End Type="HCSMLModel.saleproduct" Role="saleproduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="saletype">
+        <PropertyRef Name="saletypecde" />
+      </Principal>
+      <Dependent Role="saleproduct">
+        <PropertyRef Name="saletypecde" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

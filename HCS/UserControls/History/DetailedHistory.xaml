@@ -1,0 +1,104 @@
+﻿<Window x:Class="HCS.UserControls.History.DetailedHistory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:HCS"
+        xmlns:datasets="clr-namespace:HCS.datasets"
+        WindowStartupLocation="CenterScreen"  
+        Title="Detailed History" Height="500" Width="600" >
+    <Window.Resources>
+        <local:BoolToVisibilityConverter x:Key="booltovisibility" />
+    </Window.Resources>
+    <Grid Name="grdDetail">
+        <Grid Name="grdDetailHistory" Background="BurlyWood">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />            
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width=".2*" />
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width=".2*" />
+        </Grid.ColumnDefinitions>
+
+
+        <Label Name="lblName" Content="Purchaser Name :" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Target="{Binding ElementName=tbName}" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}" />
+        <Label Name="lblNameUrdu" Content="خریدار کا نام :"  FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Target="{Binding ElementName=tbName}" Visibility="{Binding Path=isurduvisible , Converter={StaticResource booltovisibility}}"/>
+
+        <TextBox Name="tbName_e" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"  Text="{Binding Path=(purchasername)}" MaxLength="30" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}"/>
+        <TextBox Name="tbName_u" Grid.Row="1" Grid.Column="2" FontFamily="/fonts/#Jameel Noori Nastaleeq" VerticalAlignment="Center" Text="{Binding Path=(purchasername)}" MaxLength="30" Visibility="{Binding Path=isurduvisible , Converter={StaticResource booltovisibility}}"/>
+
+
+
+        <Label Name="lblName1" Content="Product Name :" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Right" Target="{Binding ElementName=tbName}" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}"/>
+        <Label Name="lblNameUrdu1" Content="جنس کا نام:"  FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Right" Target="{Binding ElementName=tbName}" Visibility="{Binding Path=isurduvisible , Converter={StaticResource booltovisibility}}"/>
+
+        <TextBox Name="tbName_e1" Grid.Row="1" Grid.Column="5" VerticalAlignment="Center"  Text="{Binding Path=(productname)}" MaxLength="30"  Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}"/>
+        <TextBox Name="tbName_u1" Grid.Row="1" Grid.Column="5" FontFamily="/fonts/#Jameel Noori Nastaleeq" VerticalAlignment="Center" Text="{Binding Path=(productname)}" MaxLength="30" Visibility="{Binding Path=isurduvisible , Converter={StaticResource booltovisibility}}"/>
+
+
+
+        <Label Name="lblMobile" Content="No of Bags :" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Target="{Binding ElementName=tbMobile}"  Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}"/>
+        <Label Name="lblMobileUrdu" Content=" بوریوں کی تعداد :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Target="{Binding ElementName=tbMobile}" Visibility="{Binding Path=isurduvisible , Converter={StaticResource booltovisibility}}"/>
+        <TextBox Name="tbMobile" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"  Text="{Binding Path=(noofbags)}" MaxLength="30"/>
+
+
+        <Label Name="lblMobile1" Content="Bag weight :" Grid.Row="2" Grid.Column="4" HorizontalAlignment="Right" Target="{Binding ElementName=tbMobile}" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}"  />
+        <Label Name="lblMobileUrdu1" Content="بیگ کا وزن :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="2" Grid.Column="4" HorizontalAlignment="Right" Target="{Binding ElementName=tbMobile}" Visibility="{Binding Path=isurduvisible , Converter={StaticResource booltovisibility}}" />
+        <TextBox Name="tbMobile1" Grid.Row="2" Grid.Column="5" VerticalAlignment="Center"  Text="{Binding Path=bagweight}" MaxLength="30"/>
+
+
+
+        <Label Name="lblPhone" Content="Extra weight :" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Target="{Binding ElementName=tbPhone}" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}" />
+        <Label Name="lblPhoneUrdu" Content=" اضافی وزن :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Target="{Binding ElementName=tbPhone}" Visibility="{Binding Path=isurduvisible , Converter={StaticResource booltovisibility}}" />
+        <TextBox Name="tbPhone" Grid.Row="3"  Grid.Column="2" VerticalAlignment="Center"  Text="{Binding Path=extraweight}" MaxLength="30"/>
+
+
+
+        <Label Name="lblPhone1" Content="Labour :" Grid.Row="3" Grid.Column="4" HorizontalAlignment="Right" Target="{Binding ElementName=tbPhone}" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}" />
+        <Label Name="lblPhoneUrdu1" Content=" مزدوری :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="3" Grid.Column="4" HorizontalAlignment="Right" Target="{Binding ElementName=tbPhone}" Visibility="{Binding Path=isurduvisible , Converter={StaticResource booltovisibility}}" />
+        <TextBox Name="tbPhone1" Grid.Row="3"  Grid.Column="5" VerticalAlignment="Center"  Text="{Binding Path=labour}" MaxLength="30"/>
+
+
+
+        <Label Name="lblEmail" Content="Rate :" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Target="{Binding ElementName=tbEmail}" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}"  />
+        <Label Name="lblEmailUrdu" Content=" ریٹ :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Target="{Binding ElementName=tbEmail}" Visibility="{Binding Path=isurduvisible , Converter={StaticResource booltovisibility}}" />
+        <TextBox Name="tbEmail" Grid.Row="4" Grid.Column="2"  VerticalAlignment="Center"  Text="{Binding Path=rate}" MaxLength="50"/>
+
+
+        <Label Name="lblEmail1" Content="Paid amount :" Grid.Row="4" Grid.Column="4" HorizontalAlignment="Right" Target="{Binding ElementName=tbEmail}" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}"  />
+        <Label Name="lblEmailUrdu1" Content="ادا کی گئ رقم - نام :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="4" Grid.Column="4" HorizontalAlignment="Right" Target="{Binding ElementName=tbEmail}" Visibility="{Binding Path=isurduvisible , Converter={StaticResource booltovisibility}}" />
+        <TextBox Name="tbEmail1" Grid.Row="4" Grid.Column="5"  VerticalAlignment="Center"  Text="{Binding Path=amoutpaid}" MaxLength="50"/>
+
+
+
+
+        <Label Name="lblBankAccountEng" Content="Payable amount :"  Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" Target="{Binding ElementName=tbEmail}" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}" />
+        <Label Name="lblBankAccountUr" Content=" قابل ادائگی- جمع :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" Target="{Binding ElementName=tbEmail}" Visibility="{Binding Path=isurduvisible , Converter={StaticResource booltovisibility}}" />
+        <TextBox Name="tbBankAccount" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center"  Text="{Binding Path=(payableprice)}" MaxLength="50"/>
+
+
+        <Label Name="lblBankAccountEng1" Content="Total Payable :"  Grid.Row="5" Grid.Column="4" HorizontalAlignment="Right" Target="{Binding ElementName=tbEmail}" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}" />
+        <Label Name="lblBankAccountUr1" Content=" کل قابل ادائگی- بقایا جمع :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="5" Grid.Column="4" HorizontalAlignment="Right" Target="{Binding ElementName=tbEmail}" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}" />
+        <TextBox Name="tbBankAccount1" Grid.Row="5" Grid.Column="5" VerticalAlignment="Center"  Text="{Binding Path=(totalpayable)}" MaxLength="50"/>
+
+        <Label Name="lblBankAccountEng11" Content="Total Receivable :"  Grid.Row="6" Grid.Column="4" HorizontalAlignment="Right" Target="{Binding ElementName=tbEmail}" Visibility="{Binding Path=isenglishvisible , Converter={StaticResource booltovisibility}}" />
+        <Label Name="lblBankAccountUr11" Content=" کل قابل وصولی- بقایا نام :" FontSize="20" FontFamily="/fonts/#Jameel Noori Nastaleeq" Grid.Row="6" Grid.Column="4" HorizontalAlignment="Right" Target="{Binding ElementName=tbEmail}" Visibility="{Binding Path=isurduvisible , Converter={StaticResource booltovisibility}}" />
+        <TextBox Name="tbBankAccount11" Grid.Row="6" Grid.Column="5" VerticalAlignment="Center"  Text="{Binding Path=(totalreceivable)}" MaxLength="50"/>
+
+
+    </Grid>
+    </Grid>
+</Window>

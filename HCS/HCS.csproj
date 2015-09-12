@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E013EE8C-3918-422B-AE2D-17C6B068D69F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HCS</RootNamespace>
+    <AssemblyName>HCS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Waqar Ahmed\Desktop\HCS Build 2.0\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9387553910A243FACD395698C2A492F28E4343A6</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>HCS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.2000.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.2000.0\lib\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.2000.0\lib\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.2000.0\lib\CrystalDecisions.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.6\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>C:\Users\Waqar Ahmed\Desktop\New folder\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>C:\Users\Waqar Ahmed\Desktop\New folder\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.Viewer, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\SAPBusinessObjects.WPF.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\SAPBusinessObjects.WPF.ViewerShared.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="XAMLMarkupExtensions, Version=1.2.1.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XAMLMarkupExtensions.1.2.1.3\lib\net40\XAMLMarkupExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Activity.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AllUsers.cs" />
+    <Compile Include="bankuser.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BindingProxy.cs" />
+    <Compile Include="BoolToVisibilityConverter.cs" />
+    <Compile Include="companyuser.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\HCSController.cs" />
+    <Compile Include="Controllers\PurchaseController.cs" />
+    <Compile Include="Controllers\SaleController.cs" />
+    <Compile Include="datasets\feedmilldataset.cs">
+      <DependentUpon>feedmilldataset.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datasets\feedmilldataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>feedmilldataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasets\purchaseproduct.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>purchaseproduct.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasets\SaleProduct.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleProduct.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\ActivityType.cs" />
+    <Compile Include="Enums\EnumDescription.cs" />
+    <Compile Include="Enums\EnumStringValue.cs" />
+    <Compile Include="Enums\KhataType.cs" />
+    <Compile Include="Enums\ProductType.cs" />
+    <Compile Include="FeedMillTotalRecievable.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="feedmilluser.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HCSMLModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCSMLModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HCSMLModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HCSMLModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCSMLModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\bankuser.cs" />
+    <Compile Include="Helpers\companyuser.cs" />
+    <Compile Include="Helpers\feedmilluser.cs" />
+    <Compile Include="Helpers\GenerateReportInfo.cs" />
+    <Compile Include="Helpers\individualuser.cs" />
+    <Compile Include="Helpers\Khata.cs" />
+    <Compile Include="Helpers\MainWin.cs" />
+    <Compile Include="Helpers\OtherKhata.cs" />
+    <Compile Include="Helpers\purchaseproduct.cs" />
+    <Compile Include="Helpers\purchaseruser.cs" />
+    <Compile Include="Helpers\saleproduct.cs" />
+    <Compile Include="History.cs" />
+    <Compile Include="individualuser.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Khata.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhataTypeCode.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Language.cs" />
+    <Compile Include="login.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OtherKhata.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Popus\winPurchaseProductPopUp.xaml.cs">
+      <DependentUpon>winPurchaseProductPopUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popus\winSaleEdit.xaml.cs">
+      <DependentUpon>winSaleEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popus\winSaleProductPopUp.xaml.cs">
+      <DependentUpon>winSaleProductPopUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="product.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="producttype.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseproduct.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseruser.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PaymentReport_e.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentReport_e.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SalePurchaseReport_e.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalePurchaseReport_e.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SaleReceipt_e.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleReceipt_e.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SaleReceipt_u.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleReceipt_u.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SaleReciept.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleReciept.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ProdcutPurchase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProdcutPurchase.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ProductPurchase_u.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductPurchase_u.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PurchaserReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaserReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportwindows\winFeedMillReportViewer.xaml.cs">
+      <DependentUpon>winFeedMillReportViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="reportwindows\winPurchaserReportViewer.xaml.cs">
+      <DependentUpon>winPurchaserReportViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="reportwindows\winSellerReportViewer.xaml.cs">
+      <DependentUpon>winSellerReportViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="saleproduct.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="saletype.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Seller.cs" />
+    <Compile Include="SellerTotalPayable.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sellertype.cs">
+      <DependentUpon>HCSMLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\History\DetailedHistory.xaml.cs">
+      <DependentUpon>DetailedHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\History\OtherHistory.xaml.cs">
+      <DependentUpon>OtherHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Purchase\ucPurchaseProduct.xaml.cs">
+      <DependentUpon>ucPurchaseProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Purchase\ucPurchaserHistory.xaml.cs">
+      <DependentUpon>ucPurchaserHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Purchase\ucSellerHistory.xaml.cs">
+      <DependentUpon>ucSellerHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Reports\ucDailyReport.xaml.cs">
+      <DependentUpon>ucDailyReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Sale\ucFeedMillHistory.xaml.cs">
+      <DependentUpon>ucFeedMillHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Sale\ucSaleProduct.xaml.cs">
+      <DependentUpon>ucSaleProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Users\ucBankUser.xaml.cs">
+      <DependentUpon>ucBankUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Users\ucCompanyUser.xaml.cs">
+      <DependentUpon>ucCompanyUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Users\ucFeedMillUser.xaml.cs">
+      <DependentUpon>ucFeedMillUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Users\ucIndividualUser.xaml.cs">
+      <DependentUpon>ucIndividualUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Users\ucPurchaserUser.xaml.cs">
+      <DependentUpon>ucPurchaserUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WaterMarkTextHelper.cs" />
+    <Compile Include="winLogin.xaml.cs">
+      <DependentUpon>winLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winReportTesting.xaml.cs">
+      <DependentUpon>winReportTesting.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ButtonResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Popus\winPurchaseProductPopUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Popus\winSaleEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Popus\winSaleProductPopUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="reportwindows\winFeedMillReportViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="reportwindows\winPurchaserReportViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="reportwindows\winSellerReportViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\History\DetailedHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\History\OtherHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Purchase\ucPurchaseProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Purchase\ucPurchaserHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Purchase\ucSellerHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Reports\ucDailyReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Sale\ucFeedMillHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Sale\ucSaleProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Users\ucBankUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Users\ucCompanyUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Users\ucFeedMillUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Users\ucIndividualUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Users\ucPurchaserUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="winLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="winReportTesting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PaymentReport_e.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PaymentReport_e.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SalePurchaseReport_e.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalePurchaseReport_e.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SaleReceipt_e.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaleReceipt_e.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SaleReceipt_u.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaleReceipt_u.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SaleReciept.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaleReciept.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProdcutPurchase.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProdcutPurchase.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProductPurchase_u.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProductPurchase_u.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PurchaserReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PurchaserReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="datasets\feedmilldataset.xsc">
+      <DependentUpon>feedmilldataset.xsd</DependentUpon>
+    </None>
+    <None Include="datasets\feedmilldataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>feedmilldataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datasets\feedmilldataset.xss">
+      <DependentUpon>feedmilldataset.xsd</DependentUpon>
+    </None>
+    <None Include="datasets\purchaseproduct.xsc">
+      <DependentUpon>purchaseproduct.xsd</DependentUpon>
+    </None>
+    <None Include="datasets\purchaseproduct.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>purchaseproduct.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datasets\purchaseproduct.xss">
+      <DependentUpon>purchaseproduct.xsd</DependentUpon>
+    </None>
+    <Resource Include="fonts\Jameel Noori Nastaleeq.ttf" />
+    <None Include="datasets\SaleProduct.xsc">
+      <DependentUpon>SaleProduct.xsd</DependentUpon>
+    </None>
+    <None Include="datasets\SaleProduct.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleProduct.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datasets\SaleProduct.xss">
+      <DependentUpon>SaleProduct.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="HCSMLModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HCSMLModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="HCSMLModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HCSMLModel.edmx</DependentUpon>
+      <LastGenOutput>HCSMLModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="HCSMLModel.edmx.diagram">
+      <DependentUpon>HCSMLModel.edmx</DependentUpon>
+    </None>
+    <None Include="HCSMLModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HCSMLModel.edmx</DependentUpon>
+      <LastGenOutput>HCSMLModel.cs</LastGenOutput>
+    </None>
+    <None Include="HCS_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\exit.png" />
+    <Resource Include="Images\Logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Individual.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\purchase history.png" />
+    <Resource Include="Images\purchase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FeedMill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\salehistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\purchaser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\company.png" />
+    <Resource Include="Images\feedmilluser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\sellerhistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Login\lock.png" />
+    <Resource Include="Images\Login\logout.jpg" />
+    <Resource Include="Images\Login\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Login\language.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\edit.png" />
+    <Resource Include="Images\editnew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\editpen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HCSMLModel.edmx.sql" />
+    <Resource Include="Images\Alhamd.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

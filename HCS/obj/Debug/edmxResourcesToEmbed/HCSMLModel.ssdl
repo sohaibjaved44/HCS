@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HCSMLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="bankuser">
+    <Key>
+      <PropertyRef Name="bankid" />
+    </Key>
+    <Property Name="bankid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bankname_e" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="address_e" Type="nvarchar" MaxLength="300" />
+    <Property Name="imagepath" Type="nvarchar(max)" />
+    <Property Name="imagetobyte" Type="varbinary(max)" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="bankname_u" Type="nvarchar" MaxLength="50" />
+    <Property Name="address_u" Type="nchar" MaxLength="300" />
+    <Property Name="bankaccountnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="bankbranch_e" Type="nvarchar" MaxLength="50" />
+    <Property Name="bankbranch_u" Type="nvarchar" MaxLength="50" />
+    <Property Name="bankAccountTitle_e" Type="nvarchar" MaxLength="30" />
+    <Property Name="bankAccountTitle_u" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="companyuser">
+    <Key>
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="companyid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyname_e" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="address_e" Type="nvarchar" MaxLength="300" />
+    <Property Name="imagepath" Type="nvarchar(max)" />
+    <Property Name="imagetobyte" Type="varbinary(max)" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="companyname_u" Type="nvarchar" MaxLength="50" />
+    <Property Name="address_u" Type="nchar" MaxLength="300" />
+    <Property Name="bankaccountnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="bankbranch_e" Type="nvarchar" MaxLength="50" />
+    <Property Name="bankbranch_u" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FeedMillTotalRecievable">
+    <Key>
+      <PropertyRef Name="feedmillid" />
+    </Key>
+    <Property Name="feedmillid" Type="int" Nullable="false" />
+    <Property Name="totalPriceRecievable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="totalPayable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="feedmilluser">
+    <Key>
+      <PropertyRef Name="feedmillid" />
+    </Key>
+    <Property Name="feedmillid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="feemillname_e" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="address_e" Type="nvarchar" MaxLength="300" />
+    <Property Name="imagepath" Type="nvarchar(max)" />
+    <Property Name="imagetobyte" Type="varbinary(max)" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="feedmillname_u" Type="nvarchar" MaxLength="50" />
+    <Property Name="address_u" Type="nchar" MaxLength="300" />
+    <Property Name="bankaccountnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="bankbranch_e" Type="nvarchar" MaxLength="50" />
+    <Property Name="bankbranch_u" Type="nvarchar" MaxLength="50" />
+    <Property Name="numOfDealingAuthority" Type="int" />
+    <Property Name="numOfPaymentAuthority" Type="int" />
+  </EntityType>
+  <EntityType Name="individualuser">
+    <Key>
+      <PropertyRef Name="individualid" />
+    </Key>
+    <Property Name="individualid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_e" Type="nvarchar" MaxLength="50" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="30" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="address_e" Type="nvarchar" MaxLength="300" />
+    <Property Name="imagepath" Type="nvarchar(max)" />
+    <Property Name="imagetobyte" Type="varbinary(max)" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="name_u" Type="nvarchar" MaxLength="50" />
+    <Property Name="address_u" Type="nvarchar" MaxLength="300" />
+    <Property Name="bankaccountnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="bankbranch_e" Type="nvarchar" MaxLength="50" />
+    <Property Name="bankbranch_u" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="seq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="can_edit" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="productid" />
+    </Key>
+    <Property Name="productid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productname_e" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="producttype" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="productname_u" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="producttype">
+    <Key>
+      <PropertyRef Name="product_type_cde" />
+    </Key>
+    <Property Name="product_type_cde" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="product_type_dsc" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="purchaseproduct">
+    <Key>
+      <PropertyRef Name="seqid" />
+    </Key>
+    <Property Name="seqid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productid" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="seller_cde" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="sellerid" Type="int" Nullable="false" />
+    <Property Name="sellername" Type="nvarchar" MaxLength="30" />
+    <Property Name="noofbags" Type="int" Nullable="false" />
+    <Property Name="rate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="bagweight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="extraweight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="commission" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="labour" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="purchaserid" Type="int" Nullable="false" />
+    <Property Name="commissionamt" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="payableprice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="productname" Type="nvarchar" MaxLength="30" />
+    <Property Name="totalpayable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="amoutpaid" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="purchasername" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="purchaseruser">
+    <Key>
+      <PropertyRef Name="purchaserid" />
+    </Key>
+    <Property Name="purchaserid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="purchasername_e" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="30" />
+    <Property Name="address_e" Type="nvarchar" MaxLength="300" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="imagepath" Type="nvarchar(max)" />
+    <Property Name="imagetobyte" Type="varbinary(max)" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="purchasername_u" Type="nvarchar" MaxLength="50" />
+    <Property Name="address_u" Type="nvarchar" MaxLength="300" />
+    <Property Name="bankaccountnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="bankbranch_e" Type="nvarchar" MaxLength="50" />
+    <Property Name="bankbranch_u" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="saleproduct">
+    <Key>
+      <PropertyRef Name="seqid" />
+    </Key>
+    <Property Name="seqid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productid" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="feedmillid" Type="int" Nullable="false" />
+    <Property Name="rate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="drivernumber" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="vehicleno" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="recievableprice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="labour" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="totalpricerecieveable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="amountrecieved" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="productname" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="noofbags" Type="int" Nullable="false" />
+    <Property Name="bagweight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="extraweight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="weight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="totalpayable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="fee" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="thread" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="accountcharges" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="bardana" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="commissionpercent" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="commissionamount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="purchasertypecde" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="purchasername" Type="nvarchar" MaxLength="50" />
+    <Property Name="saletypecde" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="vehiclerent" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="sellertypecde" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="sellername" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="saletype">
+    <Key>
+      <PropertyRef Name="saletypecde" />
+    </Key>
+    <Property Name="saletypecde" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="saletype_e" Type="nvarchar" MaxLength="50" />
+    <Property Name="saletype_u" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SellerTotalPayable">
+    <Key>
+      <PropertyRef Name="seller_cde" />
+      <PropertyRef Name="sellerid" />
+    </Key>
+    <Property Name="seller_cde" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="sellerid" Type="int" Nullable="false" />
+    <Property Name="totalpayable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="totalreceivable" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sellertype">
+    <Key>
+      <PropertyRef Name="seller_cde" />
+    </Key>
+    <Property Name="seller_cde" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="seller_des_e" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="seller_des_u" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <Association Name="FK_product_producttype">
+    <End Role="producttype" Type="Self.producttype" Multiplicity="1" />
+    <End Role="product" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producttype">
+        <PropertyRef Name="product_type_cde" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="producttype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_purchaseproduct_sellertype">
+    <End Role="sellertype" Type="Self.sellertype" Multiplicity="1" />
+    <End Role="purchaseproduct" Type="Self.purchaseproduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sellertype">
+        <PropertyRef Name="seller_cde" />
+      </Principal>
+      <Dependent Role="purchaseproduct">
+        <PropertyRef Name="seller_cde" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HCSMLModelStoreContainer">
+    <EntitySet Name="bankuser" EntityType="Self.bankuser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="companyuser" EntityType="Self.companyuser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FeedMillTotalRecievable" EntityType="Self.FeedMillTotalRecievable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="feedmilluser" EntityType="Self.feedmilluser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="individualuser" EntityType="Self.individualuser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="producttype" EntityType="Self.producttype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchaseproduct" EntityType="Self.purchaseproduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchaseruser" EntityType="Self.purchaseruser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="saleproduct" EntityType="Self.saleproduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="saletype" EntityType="Self.saletype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SellerTotalPayable" EntityType="Self.SellerTotalPayable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sellertype" EntityType="Self.sellertype" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_product_producttype" Association="Self.FK_product_producttype">
+      <End Role="producttype" EntitySet="producttype" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_purchaseproduct_sellertype" Association="Self.FK_purchaseproduct_sellertype">
+      <End Role="sellertype" EntitySet="sellertype" />
+      <End Role="purchaseproduct" EntitySet="purchaseproduct" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
